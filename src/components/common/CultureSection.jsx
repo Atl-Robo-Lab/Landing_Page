@@ -86,10 +86,10 @@ const CultureSection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden" ref={ref}>
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50" ref={ref}>
       {/* Modern Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/80 to-blue-50/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-rose-50/80 via-pink-50/90 to-orange-50/80"></div>
         
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -100,7 +100,7 @@ const CultureSection = () => {
         
         {/* Floating decorative elements */}
         <motion.div
-          className="absolute top-40 left-20 w-64 h-64 bg-gradient-to-br from-blue-100/30 to-purple-100/20 rounded-full blur-3xl"
+          className="absolute top-40 left-20 w-64 h-64 bg-gradient-to-br from-rose-100/40 to-pink-100/30 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -114,7 +114,7 @@ const CultureSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-40 right-20 w-80 h-80 bg-gradient-to-br from-green-100/25 to-teal-100/15 rounded-full blur-3xl"
+          className="absolute bottom-40 right-20 w-80 h-80 bg-gradient-to-br from-orange-100/30 to-amber-100/20 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.15, 0.3, 0.15],

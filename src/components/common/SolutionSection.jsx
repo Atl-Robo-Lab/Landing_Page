@@ -87,10 +87,10 @@ const SolutionSection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden" ref={ref}>
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-900 via-slate-800 to-zinc-900 text-white" ref={ref}>
       {/* Modern Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-slate-800/90 to-zinc-900/90"></div>
         
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -101,7 +101,7 @@ const SolutionSection = () => {
         
         {/* Animated shapes */}
         <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-64 h-64 bg-violet-500/15 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.2, 0.1]
@@ -113,7 +113,7 @@ const SolutionSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-80 h-80 bg-cyan-500/12 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.1, 0.15, 0.1]

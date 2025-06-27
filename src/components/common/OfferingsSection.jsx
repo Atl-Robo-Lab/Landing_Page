@@ -88,28 +88,28 @@ const OfferingsSection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white">
       {/* Modern Background with Submerged Text */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/50 to-blue-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 via-purple-600/5 to-indigo-700/10"></div>
         
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <div className="text-[20rem] md:text-[25rem] lg:text-[30rem] font-black text-gray-100/20 select-none whitespace-nowrap transform -rotate-12">
+          <div className="text-[20rem] md:text-[25rem] lg:text-[30rem] font-black text-white/10 select-none whitespace-nowrap transform -rotate-12">
             LABS
           </div>
         </div>
         
         {/* Floating Shapes */}
-        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-100/30 to-purple-100/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-green-100/25 to-teal-100/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-white/15 to-violet-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-300/15 to-indigo-300/15 rounded-full blur-3xl"></div>
         
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="h-full w-full" style={{
             backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px'
           }}></div>
@@ -126,7 +126,7 @@ const OfferingsSection = () => {
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-lg mb-8"
+            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 shadow-lg mb-8"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -134,24 +134,24 @@ const OfferingsSection = () => {
             whileHover={{ scale: 1.05, y: -2 }}
           >
             <span className="text-2xl">🎯</span>
-            <span className="font-semibold text-gray-700">Our Lab Solutions</span>
+            <span className="font-semibold text-white">Our Lab Solutions</span>
           </motion.div>
 
           <motion.h2 
-            className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
             TRANSFORM YOUR
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               EDUCATION
             </span>
           </motion.h2>
           
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

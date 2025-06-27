@@ -86,7 +86,7 @@ const WhoWeAreSection = () => {
   };
 
   return (
-    <section className="min-h-screen py-24 relative overflow-hidden" ref={ref}>
+    <section className="min-h-screen py-24 relative overflow-hidden bg-white" ref={ref}>
       {/* Simple Modern Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50"></div>
       
@@ -108,13 +108,15 @@ const WhoWeAreSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Header Section */}
-        <motion.div
-          className="text-center mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+        {/* Header + Features Section */}
+        <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-200 rounded-3xl p-8 mb-16">
+          {/* Header Section */}
+          <motion.div
+            className="text-center mb-20"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           <motion.div
             className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-lg mb-8"
             variants={cardVariants}
@@ -143,13 +145,13 @@ const WhoWeAreSection = () => {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+          {/* Features Grid */}
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -170,15 +172,18 @@ const WhoWeAreSection = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+          </motion.div>
+        </div>
 
-        {/* Main Content Card */}
-        <motion.div
-          className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden mb-24"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
+        {/* Main Content Card Section */}
+        <div className="bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-200 rounded-3xl p-8 mb-16">
+          {/* Main Content Card */}
+          <motion.div
+            className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Text Content */}
             <div className="p-12 lg:p-16">
@@ -263,15 +268,18 @@ const WhoWeAreSection = () => {
               />
             </div>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Statistics Section */}
-        <motion.div
-          className="text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+        <div className="bg-gradient-to-br from-rose-100 via-pink-100 to-orange-200 rounded-3xl p-8">
+          {/* Statistics Content */}
+          <motion.div
+            className="text-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           <motion.h3
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-16"
             variants={cardVariants}
@@ -302,7 +310,8 @@ const WhoWeAreSection = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

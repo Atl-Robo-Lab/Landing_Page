@@ -154,10 +154,10 @@ const StatisticsSection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden" ref={ref}>
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50" ref={ref}>
       {/* Modern Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-white to-teal-50/50"></div>
         
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -167,8 +167,8 @@ const StatisticsSection = () => {
         </div>
         
         {/* Floating shapes */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-100/25 to-purple-100/15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-green-100/20 to-teal-100/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-emerald-100/30 to-teal-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-cyan-100/25 to-blue-100/15 rounded-full blur-3xl"></div>
         
         {/* Subtle pattern */}
         <div className="absolute inset-0 opacity-5">
