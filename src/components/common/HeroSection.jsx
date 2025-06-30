@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -82,90 +81,10 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Left Content */}
-          <div className="text-gray-900 space-y-4 sm:space-y-6 lg:space-y-8">
-            <motion.div
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full inline-block text-sm sm:text-base font-semibold shadow-lg"
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 8px 25px rgba(59, 130, 246, 0.4)",
-                y: -2,
-              }}
-            >
-              🚀 Looking Robotics Lab For School
-            </motion.div>
-
-            <motion.h1
-              className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
-              variants={itemVariants}
-            >
-              <span className="text-gray-900 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                Transform Education with
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-                ATL Lab
-              </span>
-              ,{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-                AI Lab
-              </span>{" "}
-              &
-              <br />
-              <span className="bg-gradient-to-r from-orange-300 to-red-500 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                AR & VR Lab Setup
-              </span>
-            </motion.h1>
-
-            <motion.div className="space-y-2 sm:space-y-4" variants={itemVariants}>
-              <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
-                Advanced Learning Ecosystem
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/80 backdrop-blur-md border border-gray-200 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl"
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                y: -5,
-              }}
-            >
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4 text-gray-900 leading-tight">
-                Complete ATLROBOLAB Solution
-              </h2>
-              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
-                Robotics Lab • AI & Coding • AI & IoT Lab • AR & VR • ATL Lab
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    to="/contact"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
-                  >
-                    📞 Book Demo
-                  </Link>
-                </motion.div>
-                <motion.button
-                  className="border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 text-sm sm:text-base md:text-lg"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  📺 Watch Video
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Content - Modern Tech Visual */}
+          {/* Left Content - Modern Tech Visual */}
           <motion.div
             className="relative mt-6 lg:mt-0"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
@@ -281,6 +200,86 @@ const HeroSection = () => {
               />
             ))}
           </motion.div>
+
+          {/* Right Content */}
+          <div className="text-gray-900 space-y-4 sm:space-y-6 lg:space-y-8">
+            <motion.div
+              className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full inline-block text-sm sm:text-base font-semibold shadow-lg"
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 8px 25px rgba(59, 130, 246, 0.4)",
+                y: -2,
+              }}
+            >
+              🚀 Looking Robotics Lab For School
+            </motion.div>
+
+            <motion.h1
+              className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+              variants={itemVariants}
+            >
+              <span className="text-gray-900 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+                Transform Education with
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+                ATL Lab
+              </span>
+              ,{" "}
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+                AI Lab
+              </span>{" "}
+              &
+              <br />
+              <span className="bg-gradient-to-r from-orange-300 to-red-500 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+                AR & VR Lab Setup
+              </span>
+            </motion.h1>
+
+            <motion.div className="space-y-2 sm:space-y-4" variants={itemVariants}>
+              <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+                Advanced Learning Ecosystem
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/80 backdrop-blur-md border border-gray-200 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl"
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                y: -5,
+              }}
+            >
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4 text-gray-900 leading-tight">
+                Complete ATLROBOLAB Solution
+              </h2>
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+                Robotics Lab • AI & Coding • AI & IoT Lab • AR & VR • ATL Lab
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    to="/contact"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                  >
+                    📞 Book Demo
+                  </Link>
+                </motion.div>
+                <motion.button
+                  className="border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 text-sm sm:text-base md:text-lg"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  📺 Watch Video
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
