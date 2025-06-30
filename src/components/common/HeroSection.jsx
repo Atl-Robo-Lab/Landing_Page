@@ -136,11 +136,11 @@ const HeroSection = () => {
                 />
               </div>
 
-              <div className="mt-3 sm:mt-4 lg:mt-6 text-center">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">
+              <div className="mt-2 sm:mt-3 lg:mt-4 text-center">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">
                   SOLUTION FOR YOUR SCHOOL?
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-xs md:text-sm leading-relaxed">
                   No need to look further - ATLROBO is the One-Stop Solution!
                 </p>
               </div>
@@ -202,9 +202,9 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Right Content */}
-          <div className="text-gray-900 space-y-4 sm:space-y-6 lg:space-y-8">
+          <div className="text-gray-900 space-y-4 sm:space-y-6 lg:space-y-8 text-center">
             <motion.div
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full inline-block text-sm sm:text-base font-semibold shadow-lg"
+              className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full inline-block text-xs sm:text-sm font-semibold shadow-lg"
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
@@ -216,35 +216,35 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.h1
-              className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+              className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center"
               variants={itemVariants}
             >
-              <span className="text-gray-900 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+              <span className="text-gray-900 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                 Transform Education with
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 ATL Lab
               </span>
               ,{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 AI Lab
               </span>{" "}
               &
               <br />
-              <span className="bg-gradient-to-r from-orange-300 to-red-500 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+              <span className="bg-gradient-to-r from-orange-300 to-red-500 bg-clip-text text-transparent text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                 AR & VR Lab Setup
               </span>
             </motion.h1>
 
-            <motion.div className="space-y-2 sm:space-y-4" variants={itemVariants}>
-              <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+            <motion.div className="space-y-2 sm:space-y-4 text-center" variants={itemVariants}>
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                 Advanced Learning Ecosystem
               </p>
             </motion.div>
 
             <motion.div
-              className="bg-white/80 backdrop-blur-md border border-gray-200 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl"
+              className="bg-white/80 backdrop-blur-md border border-gray-200 p-3 sm:p-4 lg:p-6 rounded-2xl shadow-xl text-center"
               variants={itemVariants}
               whileHover={{
                 scale: 1.02,
@@ -252,26 +252,26 @@ const HeroSection = () => {
                 y: -5,
               }}
             >
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4 text-gray-900 leading-tight">
+              <h2 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-900 leading-tight">
                 Complete ATLROBOLAB Solution
               </h2>
-              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+              <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base leading-relaxed">
                 Robotics Lab • AI & Coding • AI & IoT Lab • AR & VR • ATL Lab
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
                     to="/contact"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-xs sm:text-sm md:text-base"
                   >
                     📞 Book Demo
                   </Link>
                 </motion.div>
                 <motion.button
-                  className="border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 text-sm sm:text-base md:text-lg"
+                  className="border-2 border-gray-300 text-gray-700 px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 text-xs sm:text-sm md:text-base"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
