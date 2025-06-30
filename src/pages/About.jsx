@@ -75,13 +75,13 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <Badge variant="gradient" size="lg" className="mb-4">
-              About STEMROBO
+              About ALTROBOLAB
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Transforming Education Through <span className="text-gradient">Innovation</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              For over 15 years, STEMROBO has been at the forefront of educational innovation, 
+              For over 15 years, ALTROBOLAB has been at the forefront of educational innovation, 
               empowering millions of students worldwide with cutting-edge STEM education solutions 
               that prepare them for the challenges and opportunities of tomorrow.
             </p>

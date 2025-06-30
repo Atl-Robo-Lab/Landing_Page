@@ -10,6 +10,8 @@ export { default as OfferingsSection } from './OfferingsSection';
 export { default as StatisticsSection } from './StatisticsSection';
 export { default as SolutionSection } from './SolutionSection';
 export { default as CultureSection } from './CultureSection';
+export { default as VideoSection } from './VideoSection';
 export { default as Footer } from './Footer';
+export { default as ChatButton } from './ChatButton';
 export { default as AppRouter } from './AppRouter';
 export { default as PageTransition } from './PageTransition'; 

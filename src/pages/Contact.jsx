@@ -27,7 +27,7 @@ const Contact = () => {
     {
       icon: '📧',
       title: 'Email',
-      details: 'info@stemrobo.com',
+      details: 'info@altrobolab.com',
       subtitle: 'Send us an email anytime!'
     },
     {

@@ -5,7 +5,8 @@ import {
   OfferingsSection,
   StatisticsSection,
   SolutionSection,
-  CultureSection
+  CultureSection,
+  VideoSection
 } from '../components/common';
 
 const Home = () => {
@@ -16,7 +17,8 @@ const Home = () => {
       <OfferingsSection />
       <StatisticsSection />
       <SolutionSection />
-      <CultureSection />
+      {/* <CultureSection /> */}
+      <VideoSection />
     </div>
   );
 };

@@ -1,5 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import logo from "../../assets/logo.svg";
 
 const Footer = () => {
   const containerVariants = {
@@ -8,9 +11,9 @@ const Footer = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.2,
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -19,303 +22,280 @@ const Footer = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
-  };
-
-  const linkVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   return (
-    <motion.footer 
-      className="bg-gradient-to-r from-orange-500 to-yellow-500 py-12 relative overflow-hidden"
+    <motion.footer
+      className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-700 py-6 sm:py-8 md:py-12 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
       {/* Background decorative elements */}
-      <motion.div
-        className="absolute top-0 left-0 w-40 h-40 bg-orange-300 rounded-full opacity-20"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 180, 360]
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-      <motion.div
-        className="absolute bottom-0 right-0 w-32 h-32 bg-yellow-300 rounded-full opacity-15"
-        animate={{
-          scale: [1.1, 0.9, 1.1],
-          rotate: [360, 180, 0]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-700 via-teal-700 to-cyan-800 opacity-90"></div>
+      <div className="absolute top-10 left-10 w-32 h-32 bg-white opacity-5 rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-24 h-24 bg-white opacity-5 rounded-full"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white opacity-3 rounded-full"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-white"
+      <div className="w-full px-3 sm:px-4 md:px-6 lg:container lg:mx-auto relative z-10">
+        {/* Main Content */}
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-white mb-6 sm:mb-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
+          {/* Company Logo and Info */}
+          <motion.div
+            className="col-span-2 sm:col-span-3 md:col-span-2 lg:col-span-1 flex flex-col items-start"
+            variants={itemVariants}
+          >
+            <div className="mb-4 sm:mb-6 w-full">
+              <img
+                src={logo}
+                alt="ATLROBOLAB"
+                className="h-8 sm:h-10 md:h-12 w-auto mb-3 sm:mb-4"
+              />
+              <div className="text-xs sm:text-sm leading-relaxed">
+                <p className="mb-1">
+                  Changing the Education Landscape for K-12 Students by
+                  leveraging Technology and 21st century skills in line with NEP
+                  2020.
+                </p>
+                <p className="text-xs opacity-90 mt-2">
+                  ISO 9001:2015, ISO 14001:2015, ISO 20000-1:2018
+                </p>
+                <p className="mt-2 font-semibold text-xs sm:text-sm">
+                  Toll Free No: 1800-120-500-400
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Support Section */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 
-              className="text-lg font-bold mb-4"
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            >
+          <motion.div className="col-span-1" variants={itemVariants}>
+            <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">
               Support
-            </motion.h3>
-            <motion.div 
-              className="space-y-2 text-sm"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {['Contact Us', 'About Us', 'Size Guide', 'Shopping & Returns', 'Privacy'].map((item, index) => (
-                <motion.p 
-                  key={index}
-                  variants={linkVariants}
-                  whileHover={{ 
-                    x: 5, 
-                    color: "#FEF3C7",
-                    transition: { duration: 0.2 } 
-                  }}
-                  className="cursor-pointer"
-                >
-                  {item}
-                </motion.p>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Shop Section */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 
-              className="text-lg font-bold mb-4"
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            >
-              Shop
-            </motion.h3>
-            <motion.div 
-              className="space-y-2 text-sm"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {['Men\'s Shopping', 'Women\'s Shopping', 'Kids\' Shopping', 'Furniture', 'Discount'].map((item, index) => (
-                <motion.p 
-                  key={index}
-                  variants={linkVariants}
-                  whileHover={{ 
-                    x: 5, 
-                    color: "#FEF3C7",
-                    transition: { duration: 0.2 } 
-                  }}
-                  className="cursor-pointer"
-                >
-                  {item}
-                </motion.p>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Company Section */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 
-              className="text-lg font-bold mb-4"
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            >
-              Company
-            </motion.h3>
-            <motion.div 
-              className="space-y-2 text-sm"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {['Our Story', 'Careers', 'Terms & Conditions', 'Privacy & Cookie policy', 'Company information'].map((item, index) => (
-                <motion.p 
-                  key={index}
-                  variants={linkVariants}
-                  whileHover={{ 
-                    x: 5, 
-                    color: "#FEF3C7",
-                    transition: { duration: 0.2 } 
-                  }}
-                  className="cursor-pointer"
-                >
-                  {item}
-                </motion.p>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Contact Section */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 
-              className="text-lg font-bold mb-4"
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            >
-              Contact
-            </motion.h3>
-            <motion.div 
-              className="space-y-2 text-sm"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            </h3>
+            <div className="space-y-1 text-xs sm:text-sm">
               {[
-                '📧 info@stemrobo.com',
-                '📞 +91-XXX-XXX-XXXX',
-                '📍 Address Line 1,',
-                'City, State - PIN'
+                "Contact Us",
+                "Career",
+                "Privacy Policy",
+                "Terms and Conditions",
+                "Expert Guidance",
               ].map((item, index) => (
-                <motion.p 
+                <motion.p
                   key={index}
-                  variants={linkVariants}
-                  whileHover={{ 
-                    x: 5, 
-                    scale: 1.02,
-                    transition: { duration: 0.2 } 
-                  }}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                  whileHover={{ x: 5 }}
                 >
                   {item}
                 </motion.p>
               ))}
-            </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Resources Section */}
+          <motion.div className="col-span-1" variants={itemVariants}>
+            <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">
+              Resources
+            </h3>
+            <div className="space-y-1 text-xs sm:text-sm">
+              {[
+                "Events",
+                "Knowledge Base",
+                "Social Media",
+                "Media Coverage",
+                "Blogs",
+                "Press",
+                "Composite Skill Lab",
+                "SIL",
+              ].map((item, index) => (
+                <motion.p
+                  key={index}
+                  className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                  whileHover={{ x: 5 }}
+                >
+                  {item}
+                </motion.p>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Our Platforms Section */}
+          <motion.div
+            className="col-span-1 sm:col-span-1 md:col-span-1"
+            variants={itemVariants}
+          >
+            <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">
+              Our Platforms
+            </h3>
+            <div className="space-y-1 text-xs sm:text-sm">
+              {["AI Connect", "LMS", "TinkerCoders"].map((item, index) => (
+                <motion.p
+                  key={index}
+                  className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                  whileHover={{ x: 5 }}
+                >
+                  {item}
+                </motion.p>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Our Apps Section */}
+          <motion.div
+            className="col-span-1 sm:col-span-1 md:col-span-1"
+            variants={itemVariants}
+          >
+            <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">
+              Our Apps
+            </h3>
+            <div className="space-y-1 text-xs sm:text-sm mb-3">
+              {["Atlrobo Learn App", "Tinker Orbit", "AR App"].map(
+                (item, index) => (
+                  <motion.p
+                    key={index}
+                    className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                    whileHover={{ x: 5 }}
+                  >
+                    {item}
+                  </motion.p>
+                )
+              )}
+            </div>
+
+            {/* App Download Section - Hidden on very small screens, shown as separate row */}
+            <div className="hidden sm:block space-y-2">
+              <p className="text-xs font-semibold">Download App</p>
+              <div className="flex flex-col gap-1">
+                <motion.a
+                  href="#"
+                  className="flex items-center bg-black text-white px-2 py-1 rounded text-xs hover:bg-gray-800 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="text-xs mr-1">🍎</span>
+                  <span className="text-xs">App Store</span>
+                </motion.a>
+
+                <motion.a
+                  href="#"
+                  className="flex items-center bg-black text-white px-2 py-1 rounded text-xs hover:bg-gray-800 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="text-xs mr-1">📱</span>
+                  <span className="text-xs">Google Play</span>
+                </motion.a>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 
-        {/* App Section */}
-        <motion.div 
-          className="mt-12 pt-8 border-t border-white/20"
-          initial={{ opacity: 0, y: 30 }}
+        {/* App Download Section for small screens */}
+        <motion.div className="sm:hidden mb-6 w-full" variants={itemVariants}>
+          <p className="text-sm font-semibold text-white mb-3 text-center">
+            Download The ATLROBOLAB App
+          </p>
+          <div className="flex justify-center gap-3">
+            <motion.a
+              href="#"
+              className="flex items-center bg-black text-white px-3 py-2 rounded-lg text-xs hover:bg-gray-800 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-sm mr-2">🍎</span>
+              <div>
+                <div className="text-xs opacity-75">Download on</div>
+                <div className="font-semibold text-xs">App Store</div>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="#"
+              className="flex items-center bg-black text-white px-3 py-2 rounded-lg text-xs hover:bg-gray-800 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-sm mr-2">📱</span>
+              <div>
+                <div className="text-xs opacity-75">Get it on</div>
+                <div className="font-semibold text-xs">Google Play</div>
+              </div>
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* Social Media Section */}
+        <motion.div
+          className="text-center mb-4"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <motion.div 
-              className="mb-6 lg:mb-0"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
+          <div className="flex justify-center gap-4">
+            <motion.div
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
             >
-              <h3 className="text-lg font-bold text-white mb-4">Our Apps</h3>
-              <div className="flex space-x-4">
-                <motion.div 
-                  className="bg-white rounded-lg p-3 flex items-center space-x-2 cursor-pointer"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
-                    transition: { duration: 0.3 }
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.div 
-                    className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center"
-                    whileHover={{ rotate: 10 }}
-                  >
-                    <span className="text-white text-xs">📱</span>
-                  </motion.div>
-                  <div className="text-gray-800 text-sm">
-                    <div className="font-medium">Download on the</div>
-                    <div className="font-bold">App Store</div>
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  className="bg-white rounded-lg p-3 flex items-center space-x-2 cursor-pointer"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
-                    transition: { duration: 0.3 }
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.div 
-                    className="w-8 h-8 bg-green-600 rounded flex items-center justify-center"
-                    whileHover={{ rotate: -10 }}
-                  >
-                    <span className="text-white text-xs">▶</span>
-                  </motion.div>
-                  <div className="text-gray-800 text-sm">
-                    <div className="font-medium">Get it on</div>
-                    <div className="font-bold">Google Play</div>
-                  </div>
-                </motion.div>
-              </div>
+              <FaInstagram size={24} />
             </motion.div>
-
-            {/* Logo */}
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              viewport={{ once: true }}
+            <motion.div
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
             >
-              <motion.div 
-                className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto cursor-pointer"
-                whileHover={{ 
-                  scale: 1.1,
-                  rotate: 360,
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                <span className="text-2xl">🤖</span>
-              </motion.div>
-              <motion.div 
-                className="text-white font-bold"
-                whileHover={{ scale: 1.05 }}
-              >
-                STEMROBO
-              </motion.div>
+              <FaFacebook size={24} />
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              <FaLinkedin size={24} />
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              <FaYoutube size={24} />
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              <FaXTwitter size={24} />
             </motion.div>
           </div>
         </motion.div>
 
         {/* Copyright */}
-        <motion.div 
-          className="mt-8 pt-8 border-t border-white/20 text-center text-white text-sm"
+        <motion.div
+          className="text-center text-white text-xs sm:text-sm border-t border-white border-opacity-20 pt-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.p
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            Copyright 2024 - STEMROBO Technologies Pvt Ltd. All Rights Reserved - Terms & Conditions Privacy & Policy
-          </motion.p>
+          <p className="leading-tight">
+            Copyright 2025 - Atlrobo Lab Technologies Pvt. Ltd. All Rights
+            Reserved - Terms & Conditions | Privacy & Policy
+          </p>
         </motion.div>
       </div>
     </motion.footer>
   );
 };
 
-export default Footer; 
+export default Footer;

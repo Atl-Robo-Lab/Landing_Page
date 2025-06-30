@@ -223,7 +223,7 @@ const Products = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose <span className="text-gradient">STEMROBO</span>?
+                Why Choose <span className="text-gradient">ALTROBOLAB</span>?
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 We provide comprehensive support and world-class educational solutions
@@ -278,15 +278,15 @@ const Products = () => {
                   <Button 
                     variant="gradient" 
                     size="lg"
-                    className="flex-1"
+                    className="flex-1 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
                     rightIcon="🚀"
                   >
                     Get Started Today
                   </Button>
                   <Button 
-                    variant="secondary" 
+                    variant="accent" 
                     size="lg"
-                    className="flex-1"
+                    className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300"
                     leftIcon="📞"
                   >
                     Schedule Demo

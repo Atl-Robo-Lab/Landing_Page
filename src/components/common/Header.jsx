@@ -81,7 +81,7 @@ const Header = () => {
       }}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo Section */}
           <motion.div 
             className="flex items-center"
@@ -92,7 +92,7 @@ const Header = () => {
               <motion.img
                 src={logo}
                 alt="ATLROBOLAB"
-                className="h-10 w-auto drop-shadow-lg"
+                className="h-8 sm:h-10 w-auto drop-shadow-lg"
                 initial={{ rotate: 0 }}
                 whileHover={{ rotate: 0, filter: "brightness(1.1)" }}
                 transition={{ duration: 0.5 }}
@@ -165,31 +165,31 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <motion.button
-            className="lg:hidden relative p-2 w-10 h-10 flex flex-col justify-center items-center hover:bg-white/10 rounded-lg transition-colors"
+            className="lg:hidden relative p-2 w-8 h-8 sm:w-10 sm:h-10 flex flex-col justify-center items-center hover:bg-white/10 rounded-lg transition-colors"
             onClick={handleMenuToggle}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.9 }}
           >
             <motion.span
-              className="block h-0.5 w-6 bg-white rounded-full"
+              className="block h-0.5 w-5 sm:w-6 bg-white rounded-full"
               animate={{
                 rotate: isMenuOpen ? 45 : 0,
-                y: isMenuOpen ? 6 : 0,
+                y: isMenuOpen ? 5 : 0,
               }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block h-0.5 w-6 bg-white rounded-full mt-1.5"
+              className="block h-0.5 w-5 sm:w-6 bg-white rounded-full mt-1"
               animate={{
                 opacity: isMenuOpen ? 0 : 1,
               }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block h-0.5 w-6 bg-white rounded-full mt-1.5"
+              className="block h-0.5 w-5 sm:w-6 bg-white rounded-full mt-1"
               animate={{
                 rotate: isMenuOpen ? -45 : 0,
-                y: isMenuOpen ? -8 : 0,
+                y: isMenuOpen ? -7 : 0,
               }}
               transition={{ duration: 0.3 }}
             />
@@ -200,14 +200,14 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.nav
-              className="lg:hidden border-t border-white/20 bg-black/20 backdrop-blur-md"
+              className="lg:hidden border-t border-white/20 bg-black/20 backdrop-blur-md max-h-[70vh] overflow-y-auto"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="py-4 space-y-1"
+                className="py-2 space-y-0.5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
@@ -217,12 +217,12 @@ const Header = () => {
                     key={item.path}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
+                    transition={{ delay: index * 0.03 }}
                     className="rounded-lg"
                   >
                     <Link
                       to={item.path}
-                      className={`block py-3 px-4 text-base text-white hover:bg-white/10 rounded-lg transition-colors ${
+                      className={`block py-2 px-4 text-sm sm:text-base text-white hover:bg-white/10 rounded-lg transition-colors ${
                         isActiveLink(item.path) ? 'bg-blue-600/30 text-blue-200' : ''
                       }`}
                       onClick={handleLinkClick}
@@ -232,12 +232,12 @@ const Header = () => {
                     
                     {/* Mobile Dropdown Items */}
                     {item.hasDropdown && (
-                      <div className="pl-6 space-y-1">
+                      <div className="pl-4 space-y-0.5">
                         {item.dropdownItems.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.path}
                             to={dropdownItem.path}
-                            className="block py-2 px-4 text-sm text-blue-200 hover:text-white hover:bg-white/10 rounded"
+                            className="block py-1.5 px-3 text-xs sm:text-sm text-blue-200 hover:text-white hover:bg-white/10 rounded"
                             onClick={handleLinkClick}
                           >
                             {dropdownItem.label}

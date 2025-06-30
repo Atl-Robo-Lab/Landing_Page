@@ -84,10 +84,10 @@ const StatisticsSection = () => {
         <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
         
         {/* Main card */}
-        <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 text-center">
+        <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-500 text-center">
           {/* Icon */}
           <motion.div
-            className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-2xl shadow-lg`}
+            className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto mb-3 md:mb-4 lg:mb-6 rounded-xl md:rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-lg md:text-xl lg:text-2xl shadow-lg`}
             whileHover={{ 
               scale: 1.1, 
               rotate: [0, 5, -5, 0],
@@ -99,7 +99,7 @@ const StatisticsSection = () => {
 
           {/* Number */}
           <motion.div
-            className={`text-4xl md:text-5xl font-black mb-3 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-3 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ 
@@ -115,7 +115,7 @@ const StatisticsSection = () => {
 
           {/* Label */}
           <motion.h3
-            className="text-xl font-bold text-gray-900 mb-3"
+            className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-2 md:mb-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: index * 0.1 + 0.7 }}
@@ -126,7 +126,7 @@ const StatisticsSection = () => {
 
           {/* Description */}
           <motion.p
-            className="text-gray-600 text-sm"
+            className="text-gray-600 text-xs md:text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: index * 0.1 + 0.9 }}
@@ -154,14 +154,14 @@ const StatisticsSection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50" ref={ref}>
+    <section className="py-12 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50" ref={ref}>
       {/* Modern Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-white to-teal-50/50"></div>
         
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <div className="text-[15rem] md:text-[20rem] lg:text-[25rem] font-black text-gray-100/15 select-none whitespace-nowrap transform rotate-12">
+          <div className="text-[8rem] sm:text-[12rem] md:text-[16rem] lg:text-[20rem] xl:text-[25rem] font-black text-gray-100/15 select-none whitespace-nowrap transform rotate-12">
             IMPACT
           </div>
         </div>
@@ -184,26 +184,26 @@ const StatisticsSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-8 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-lg mb-8"
+            className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 md:px-6 md:py-3 shadow-lg mb-4 md:mb-8"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, y: -2 }}
           >
-            <span className="text-2xl">📊</span>
-            <span className="font-semibold text-gray-700">Our Global Impact</span>
+            <span className="text-lg md:text-2xl">📊</span>
+            <span className="font-semibold text-gray-700 text-sm md:text-base">Our Global Impact</span>
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-4 md:mb-6 lg:mb-8 leading-tight px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -216,7 +216,7 @@ const StatisticsSection = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -228,7 +228,7 @@ const StatisticsSection = () => {
 
         {/* Statistics Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -244,25 +244,25 @@ const StatisticsSection = () => {
 
         {/* Bottom section */}
         <motion.div
-          className="text-center mt-20"
+          className="text-center mt-8 md:mt-16 lg:mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12 text-white relative overflow-hidden mx-4 md:mx-0">
             {/* Submerged background text */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-              <span className="text-6xl md:text-8xl font-black text-white/5 select-none">
+              <span className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-white/5 select-none">
                 EXCELLENCE
               </span>
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
                 Leading the Future of Education
               </h3>
-              <p className="text-lg opacity-90 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg opacity-90 max-w-2xl mx-auto">
                 Join thousands of schools worldwide that trust ATLROBOLAB for innovative STEM education solutions
               </p>
             </div>

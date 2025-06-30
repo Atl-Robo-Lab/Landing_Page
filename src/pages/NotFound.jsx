@@ -8,7 +8,7 @@ const NotFound = () => {
     { icon: '🏠', label: 'Home', path: '/', description: 'Go back to our homepage' },
     { icon: '📚', label: 'Products', path: '/products', description: 'Explore our STEM solutions' },
     { icon: '💬', label: 'Contact', path: '/contact', description: 'Get in touch with us' },
-    { icon: 'ℹ️', label: 'About', path: '/about', description: 'Learn more about STEMROBO' }
+    { icon: 'ℹ️', label: 'About', path: '/about', description: 'Learn more about ALTROBOLAB' }
   ];
 
   const floatingVariants = {
