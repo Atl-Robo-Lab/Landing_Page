@@ -17,12 +17,13 @@ const Button = ({
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-medium hover:shadow-large hover:shadow-colored',
-    secondary: 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-gray-500 shadow-soft hover:shadow-medium',
-    accent: 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 shadow-medium hover:shadow-large',
+    primary: 'bg-primary text-white hover:bg-primary-dark focus:ring-primary shadow-medium hover:shadow-large hover:shadow-primary/25',
+    secondary: 'bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary shadow-medium hover:shadow-large hover:shadow-secondary/25',
+    accent: 'bg-accent text-white hover:bg-accent-dark focus:ring-accent shadow-medium hover:shadow-large hover:shadow-accent/25',
+    success: 'bg-success text-white hover:bg-success-dark focus:ring-success shadow-medium hover:shadow-large hover:shadow-success/25',
     ghost: 'text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
-    gradient: 'gradient-hero text-white shadow-medium hover:shadow-large focus:ring-purple-500'
+    outline: 'border-2 border-primary text-primary hover:bg-primary-light focus:ring-primary',
+    gradient: 'bg-gradient-primary-secondary text-white shadow-medium hover:shadow-large focus:ring-primary'
   };
   
   const sizes = {

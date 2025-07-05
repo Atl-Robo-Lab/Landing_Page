@@ -46,7 +46,7 @@ const NotFound = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-red-50 via-white to-orange-50">
+    <div className="bg-accent-light">
       <div className="py-16">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -65,9 +65,9 @@ const NotFound = () => {
                   className="text-9xl md:text-[12rem] font-bold text-gray-200 select-none"
                   animate={{ 
                     textShadow: [
-                      "0 0 20px rgba(239, 68, 68, 0.3)",
-                      "0 0 40px rgba(239, 68, 68, 0.5)",
-                      "0 0 20px rgba(239, 68, 68, 0.3)"
+                      "0 0 20px rgba(220, 38, 38, 0.3)",
+                      "0 0 40px rgba(220, 38, 38, 0.5)",
+                      "0 0 20px rgba(220, 38, 38, 0.3)"
                     ]
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -89,7 +89,7 @@ const NotFound = () => {
             {/* Main Content */}
             <motion.div variants={itemVariants} className="mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Oops! Page <span className="text-gradient">Not Found</span>
+                Oops! Page <span className="text-gradient-primary-secondary">Not Found</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Looks like our robot couldn't find the page you're looking for. 
@@ -107,7 +107,7 @@ const NotFound = () => {
                   <input
                     type="text"
                     placeholder="What are you looking for?"
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                   <Button variant="primary" size="md">
                     Search

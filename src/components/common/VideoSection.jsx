@@ -86,12 +86,12 @@ const VideoSection = () => {
 
   return (
     <section
-      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden bg-primary-light"
       ref={ref}
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-indigo-50/90 to-purple-50/80"></div>
+        <div className="absolute inset-0 bg-primary-light opacity-80"></div>
 
         {/* Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -102,7 +102,7 @@ const VideoSection = () => {
 
         {/* Floating decorative elements */}
         <motion.div
-          className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-blue-100/40 to-indigo-100/30 rounded-full blur-3xl"
+          className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 h-32 sm:w-48 sm:h-48 bg-primary-light rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -116,7 +116,7 @@ const VideoSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-40 h-40 sm:w-64 sm:h-64 bg-gradient-to-br from-purple-100/30 to-pink-100/20 rounded-full blur-3xl"
+          className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-40 h-40 sm:w-64 sm:h-64 bg-secondary-light rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.15, 0.35, 0.15],
@@ -160,7 +160,7 @@ const VideoSection = () => {
             viewport={{ once: true }}
           >
             INNOVATION IN
-            <span className="block bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-gradient-accent">
               ACTION
             </span>
           </motion.h2>
@@ -197,12 +197,12 @@ const VideoSection = () => {
                 {/* Video Thumbnail */}
                 <div className="relative aspect-video bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
                   {/* Placeholder for actual video thumbnail */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-primary-accent opacity-20"></div>
 
                   {/* YouTube Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
-                      className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl"
+                      className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-accent rounded-full flex items-center justify-center shadow-2xl"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       transition={{ duration: 0.2 }}
@@ -218,14 +218,14 @@ const VideoSection = () => {
 
                 {/* Video Info */}
                 <div className="p-3 sm:p-4 lg:p-6">
-                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-1 sm:mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">
                     {video.title}
                   </h3>
                   <p className="text-gray-600 text-xs sm:text-sm line-clamp-2 sm:line-clamp-none">{video.description}</p>
                 </div>
 
                 {/* Animated Border */}
-                <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent group-hover:border-blue-300 transition-colors duration-300"></div>
+                <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent group-hover:border-primary transition-colors duration-300"></div>
               </div>
             </motion.div>
           ))}
@@ -240,7 +240,7 @@ const VideoSection = () => {
           viewport={{ once: true }}
         >
           <motion.button
-            className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-red-600 to-pink-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-accent text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() =>

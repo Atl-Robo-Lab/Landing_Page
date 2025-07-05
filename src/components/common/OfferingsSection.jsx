@@ -17,8 +17,8 @@ const OfferingsSection = () => {
       description:
         "Engage students in hands-on learning, critical thinking, and exploration with our comprehensive STEM & Robotics program.",
       features: ["Robotics Kits", "STEM Curriculum", "Project-Based Learning"],
-      gradient: "from-blue-500 to-cyan-500",
-      bgPattern: "from-blue-50 to-cyan-50",
+      gradient: "bg-gradient-primary-secondary",
+      bgPattern: "bg-primary-light",
       image: stemRoboticsImg,
     },
     {
@@ -28,8 +28,8 @@ const OfferingsSection = () => {
       description:
         "Introduce students to Artificial Intelligence and Internet of Things through practical experiments and real-world applications.",
       features: ["Machine Learning", "IoT Devices", "Smart Systems"],
-      gradient: "from-purple-500 to-pink-500",
-      bgPattern: "from-purple-50 to-pink-50",
+      gradient: "bg-gradient-secondary-accent",
+      bgPattern: "bg-secondary-light",
       image: aiIotImg,
     },
     {
@@ -39,8 +39,8 @@ const OfferingsSection = () => {
       description:
         "Foster curiosity, creativity and imagination in young minds through design thinking and computational problem-solving.",
       features: ["3D Printing", "Electronics", "Innovation Hub"],
-      gradient: "from-orange-500 to-red-500",
-      bgPattern: "from-orange-50 to-red-50",
+      gradient: "bg-gradient-primary-accent",
+      bgPattern: "bg-accent-light",
       image: atalTinkeringImg,
     },
     {
@@ -50,8 +50,8 @@ const OfferingsSection = () => {
       description:
         "Boost student achievement by encouraging creative thinking and producing engaging educational experiences.",
       features: ["Digital Literacy", "Creative Projects", "Modern Pedagogy"],
-      gradient: "from-green-500 to-teal-500",
-      bgPattern: "from-green-50 to-teal-50",
+      gradient: "bg-gradient-accent-success",
+      bgPattern: "bg-success-light",
       image: centuryLearningImg,
     },
     {
@@ -61,8 +61,8 @@ const OfferingsSection = () => {
       description:
         "Experience a broad range of STEM activities that converge into integrated solutions through collaborative learning.",
       features: ["Design Thinking", "Prototyping", "Research Projects"],
-      gradient: "from-indigo-500 to-blue-500",
-      bgPattern: "from-indigo-50 to-blue-50",
+      gradient: "bg-gradient-primary-secondary",
+      bgPattern: "bg-neutral-light",
       image: innovationImg,
     },
     {
@@ -72,8 +72,8 @@ const OfferingsSection = () => {
       description:
         "Integrate technology with hands-on engineering through multidisciplinary project-based learning experiences.",
       features: ["CAD Design", "Engineering Projects", "Team Collaboration"],
-      gradient: "from-slate-500 to-gray-600",
-      bgPattern: "from-slate-50 to-gray-50",
+      gradient: "bg-gradient-secondary-accent",
+      bgPattern: "bg-neutral-light",
       image: engineeringImg,
     },
   ];
@@ -107,10 +107,10 @@ const OfferingsSection = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-primary-secondary text-white">
       
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-600/95 via-purple-600/90 to-indigo-700/95"></div>
+        <div className="absolute inset-0 bg-gradient-primary-secondary opacity-95"></div>
 
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -165,13 +165,13 @@ const OfferingsSection = () => {
             viewport={{ once: true }}
           >
             TRANSFORM YOUR
-            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="block text-gradient-accent-success">
               EDUCATION
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto px-4"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -215,7 +215,7 @@ const OfferingsSection = () => {
                 
                 {/* Gradient Overlay */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${offering.gradient} opacity-70 mix-blend-multiply`}
+                  className={`absolute inset-0 ${offering.gradient} opacity-70 mix-blend-multiply`}
                 ></div>
 
                 {/* Content Container */}
@@ -308,7 +308,7 @@ const OfferingsSection = () => {
           viewport={{ once: true }}
         >
           <motion.div
-            className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white relative overflow-hidden"
+            className="bg-gradient-accent-success rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white relative overflow-hidden"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -327,7 +327,7 @@ const OfferingsSection = () => {
                 Join hundreds of schools already using ATLROBOLAB solutions
               </p>
               <motion.button
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-primary-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

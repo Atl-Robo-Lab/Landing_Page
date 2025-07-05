@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppRouter } from './components/common';
+import React from "react";
+import { AppRouter } from "./components/common";
 
 const App = () => {
   return <AppRouter />;

@@ -64,7 +64,7 @@ const About = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="bg-primary-light">
       <div className="py-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
@@ -78,7 +78,7 @@ const About = () => {
               About ALTROBOLAB
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Transforming Education Through <span className="text-gradient">Innovation</span>
+              Transforming Education Through <span className="text-gradient-primary-secondary">Innovation</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               For over 15 years, ALTROBOLAB has been at the forefront of educational innovation, 
@@ -119,10 +119,10 @@ const About = () => {
             viewport={{ once: true }}
           >
             <Card variant="elevated" className="overflow-hidden">
-              <div className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white p-8 md:p-12">
+              <div className="bg-gradient-primary-secondary text-white p-8 md:p-12">
                 <div className="max-w-4xl mx-auto text-center">
                   <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
-                  <p className="text-xl md:text-2xl leading-relaxed text-purple-100">
+                  <p className="text-xl md:text-2xl leading-relaxed text-white/90">
                     To drive the future of Science, Technology, Engineering and Mathematics (STEM) 
                     Education through our experiential programs into Robotics, Programming, Science, and Electronics.
                   </p>
@@ -162,19 +162,19 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Impact</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-3">✓</span>
+                    <span className="text-success mr-3">✓</span>
                     <span className="text-gray-700">Innovative Learning Solutions</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-3">✓</span>
+                    <span className="text-success mr-3">✓</span>
                     <span className="text-gray-700">Global Educational Transformation</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-3">✓</span>
+                    <span className="text-success mr-3">✓</span>
                     <span className="text-gray-700">Future-Ready Skill Development</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-3">✓</span>
+                    <span className="text-success mr-3">✓</span>
                     <span className="text-gray-700">Comprehensive Teacher Training</span>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ const About = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our <span className="text-gradient">Core Values</span>
+                Our <span className="text-gradient-primary-secondary">Core Values</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 These principles guide everything we do and help us deliver exceptional 
@@ -238,7 +238,7 @@ const About = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our <span className="text-gradient">Journey</span>
+                Our <span className="text-gradient-primary-secondary">Journey</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 From a small startup to a global leader in STEM education, 
@@ -248,7 +248,7 @@ const About = () => {
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 transform md:-translate-x-1/2"></div>
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-primary-secondary transform md:-translate-x-1/2"></div>
               
               <div className="space-y-8">
                 {timeline.map((item, index) => (
@@ -263,12 +263,12 @@ const About = () => {
                     viewport={{ once: true }}
                   >
                     {/* Timeline dot */}
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform md:-translate-x-1/2 z-10"></div>
+                    <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-gradient-primary-secondary rounded-full transform md:-translate-x-1/2 z-10"></div>
                     
                     {/* Content */}
                     <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
                       <Card className="p-6">
-                        <div className="text-sm font-semibold text-blue-600 mb-2">{item.year}</div>
+                        <div className="text-sm font-semibold text-primary mb-2">{item.year}</div>
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{item.event}</h3>
                         <p className="text-gray-600">{item.description}</p>
                       </Card>
@@ -290,7 +290,7 @@ const About = () => {
             <Card variant="elevated" className="p-12">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Join the <span className="text-gradient">STEM Revolution</span>
+                  Join the <span className="text-gradient-primary-secondary">STEM Revolution</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
                   Be part of our mission to transform education and empower the next generation 
@@ -298,7 +298,7 @@ const About = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <motion.button
-                    className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300"
+                    className="px-8 py-3 bg-gradient-primary-secondary text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

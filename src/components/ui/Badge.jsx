@@ -12,14 +12,15 @@ const Badge = ({
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200';
   
   const variants = {
-    default: 'bg-gray-100 text-gray-800',
-    primary: 'bg-blue-100 text-blue-800',
-    secondary: 'bg-purple-100 text-purple-800',
-    success: 'bg-green-100 text-green-800',
-    warning: 'bg-yellow-100 text-yellow-800',
-    danger: 'bg-red-100 text-red-800',
-    info: 'bg-cyan-100 text-cyan-800',
-    gradient: 'bg-gradient-to-r from-blue-500 to-purple-500 text-white'
+    default: 'bg-neutral-light text-neutral-dark',
+    primary: 'bg-primary-light text-primary-dark',
+    secondary: 'bg-secondary-light text-secondary-dark',
+    accent: 'bg-accent-light text-accent-dark',
+    success: 'bg-success-light text-success-dark',
+    warning: 'bg-accent-light text-accent-dark',
+    danger: 'bg-accent-light text-accent-dark',
+    info: 'bg-primary-light text-primary-dark',
+    gradient: 'bg-gradient-primary-secondary text-white'
   };
   
   const sizes = {

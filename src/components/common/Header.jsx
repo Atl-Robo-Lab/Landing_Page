@@ -22,8 +22,8 @@ const Header = () => {
   };
 
   const linkClasses = (path) => {
-    const baseClasses = "text-white hover:text-blue-200 transition-all duration-200 font-medium text-[15px] relative py-2 px-3";
-    const activeClasses = "text-blue-200 font-semibold";
+    const baseClasses = "text-white hover:text-primary-light transition-all duration-200 font-medium text-[15px] relative py-2 px-3";
+    const activeClasses = "text-primary-light font-semibold";
     return isActiveLink(path) ? `${baseClasses} ${activeClasses}` : baseClasses;
   };
 
@@ -71,13 +71,12 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 shadow-2xl sticky top-0 z-50 border-b border-blue-800/30 backdrop-blur-sm"
+      className="bg-gradient-primary-secondary shadow-2xl sticky top-0 z-50 border-b border-primary/30 backdrop-blur-sm"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       style={{
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #065f46 50%, #1e3a8a 75%, #0f172a 100%)',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)'
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(234, 88, 12, 0.1)'
       }}
     >
       <div className="container mx-auto px-4">
@@ -121,7 +120,7 @@ const Header = () => {
                   {item.label}
                   {item.hasDropdown && (
                     <motion.svg
-                      className="ml-1 h-3 w-3 text-blue-200"
+                      className="ml-1 h-3 w-3 text-primary-light"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -150,7 +149,7 @@ const Header = () => {
                       >
                         <Link
                           to={dropdownItem.path}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-light hover:text-primary transition-colors duration-200"
                           onClick={handleLinkClick}
                         >
                           {dropdownItem.label}
@@ -223,7 +222,7 @@ const Header = () => {
                     <Link
                       to={item.path}
                       className={`block py-2 px-4 text-sm sm:text-base text-white hover:bg-white/10 rounded-lg transition-colors ${
-                        isActiveLink(item.path) ? 'bg-blue-600/30 text-blue-200' : ''
+                        isActiveLink(item.path) ? 'bg-primary/30 text-primary-light' : ''
                       }`}
                       onClick={handleLinkClick}
                     >
@@ -237,7 +236,7 @@ const Header = () => {
                           <Link
                             key={dropdownItem.path}
                             to={dropdownItem.path}
-                            className="block py-1.5 px-3 text-xs sm:text-sm text-blue-200 hover:text-white hover:bg-white/10 rounded"
+                            className="block py-1.5 px-3 text-xs sm:text-sm text-primary-light hover:text-white hover:bg-white/10 rounded"
                             onClick={handleLinkClick}
                           >
                             {dropdownItem.label}

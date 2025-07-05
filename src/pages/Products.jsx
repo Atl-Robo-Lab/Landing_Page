@@ -8,7 +8,7 @@ const Products = () => {
       title: 'STEM & Robotics Lab',
       description: 'Complete robotics learning solution with hands-on kits and curriculum covering basic to advanced robotics concepts.',
       icon: '🤖',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'bg-gradient-primary-secondary',
       features: ['Arduino & Raspberry Pi', 'Sensor Integration', 'AI Programming', '3D Design'],
       price: 'Starting from ₹2,50,000',
       badge: 'Most Popular'
@@ -17,7 +17,7 @@ const Products = () => {
       title: 'AI & IoT Lab',
       description: 'Artificial Intelligence and Internet of Things learning modules with real-world project implementations.',
       icon: '🧠',
-      color: 'from-purple-500 to-pink-500',
+      color: 'bg-gradient-secondary-accent',
       features: ['Machine Learning', 'IoT Devices', 'Data Analytics', 'Cloud Integration'],
       price: 'Starting from ₹3,00,000',
       badge: 'Advanced'
@@ -26,7 +26,7 @@ const Products = () => {
       title: 'Atal Tinkering Lab',
       description: 'Government initiative focused on innovation and creativity with comprehensive STEM equipment.',
       icon: '🔧',
-      color: 'from-green-500 to-emerald-500',
+      color: 'bg-gradient-success-primary',
       features: ['3D Printers', 'Electronics Kit', 'Fabrication Tools', 'Innovation Projects'],
       price: 'Starting from ₹20,00,000',
       badge: 'Government Approved'
@@ -35,7 +35,7 @@ const Products = () => {
       title: 'Programming Lab',
       description: 'Learn programming concepts through interactive coding exercises and project-based learning.',
       icon: '💻',
-      color: 'from-orange-500 to-red-500',
+      color: 'bg-gradient-accent-primary',
       features: ['Python & JavaScript', 'Web Development', 'Mobile Apps', 'Game Development'],
       price: 'Starting from ₹1,50,000',
       badge: 'Beginner Friendly'
@@ -44,7 +44,7 @@ const Products = () => {
       title: 'Science Lab',
       description: 'Virtual and physical science experiments for better understanding of scientific concepts.',
       icon: '🔬',
-      color: 'from-teal-500 to-blue-500',
+      color: 'bg-gradient-primary-success',
       features: ['Virtual Labs', 'Physics Experiments', 'Chemistry Simulations', 'Biology Models'],
       price: 'Starting from ₹1,80,000',
       badge: 'Interactive'
@@ -53,7 +53,7 @@ const Products = () => {
       title: 'Mathematics Lab',
       description: 'Interactive mathematical concepts and problem-solving tools with visual learning aids.',
       icon: '📐',
-      color: 'from-pink-500 to-purple-500',
+      color: 'bg-gradient-secondary-success',
       features: ['Geometry Tools', 'Algebra Software', 'Statistics Analysis', 'Mathematical Models'],
       price: 'Starting from ₹1,20,000',
       badge: 'Visual Learning'
@@ -129,7 +129,7 @@ const Products = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="bg-neutral-light">
       <div className="py-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
@@ -143,7 +143,7 @@ const Products = () => {
               Our Products
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Complete <span className="text-gradient">STEM Education</span> Solutions
+              Complete <span className="text-gradient-primary-secondary">STEM Education</span> Solutions
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive educational solutions designed to prepare students for the future
@@ -167,7 +167,7 @@ const Products = () => {
               >
                 <Card variant="elevated" className="h-full overflow-hidden">
                   {/* Header with gradient background */}
-                  <div className={`bg-gradient-to-br ${product.color} p-6 text-white relative`}>
+                  <div className={`${product.color} p-6 text-white relative`}>
                     <div className="absolute top-4 right-4">
                       <Badge variant="default" size="sm" className="bg-white/20 text-white border-white/20">
                         {product.badge}
@@ -187,7 +187,7 @@ const Products = () => {
                       <div className="grid grid-cols-2 gap-2">
                         {product.features.map((feature, idx) => (
                           <div key={idx} className="flex items-center text-sm text-gray-600">
-                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
                             {feature}
                           </div>
                         ))}
@@ -223,7 +223,7 @@ const Products = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose <span className="text-gradient">ALTROBOLAB</span>?
+                Why Choose <span className="text-gradient-primary-secondary">ALTROBOLAB</span>?
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 We provide comprehensive support and world-class educational solutions
@@ -278,7 +278,7 @@ const Products = () => {
                   <Button 
                     variant="gradient" 
                     size="lg"
-                    className="flex-1 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
+                    className="flex-1 bg-gradient-primary-secondary shadow-lg hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
                     rightIcon="🚀"
                   >
                     Get Started Today
@@ -286,7 +286,7 @@ const Products = () => {
                   <Button 
                     variant="accent" 
                     size="lg"
-                    className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300"
+                    className="flex-1 bg-gradient-success-primary shadow-lg hover:shadow-success/25 transform hover:scale-105 transition-all duration-300"
                     leftIcon="📞"
                   >
                     Schedule Demo
@@ -295,15 +295,15 @@ const Products = () => {
                 
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-2">✓</span>
+                    <span className="text-success mr-2">✓</span>
                     Free Consultation
                   </div>
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-2">✓</span>
+                    <span className="text-success mr-2">✓</span>
                     Custom Solutions
                   </div>
                   <div className="flex items-center">
-                    <span className="text-green-500 mr-2">✓</span>
+                    <span className="text-success mr-2">✓</span>
                     24/7 Support
                   </div>
                 </div>

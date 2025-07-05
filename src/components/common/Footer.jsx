@@ -29,14 +29,14 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-700 py-6 sm:py-8 md:py-12 relative overflow-hidden"
+      className="bg-gradient-accent-success py-6 sm:py-8 md:py-12 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-700 via-teal-700 to-cyan-800 opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-accent-success opacity-90"></div>
       <div className="absolute top-10 left-10 w-32 h-32 bg-white opacity-5 rounded-full"></div>
       <div className="absolute bottom-10 right-10 w-24 h-24 bg-white opacity-5 rounded-full"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white opacity-3 rounded-full"></div>
@@ -92,7 +92,7 @@ const Footer = () => {
               ].map((item, index) => (
                 <motion.p
                   key={index}
-                  className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                  className="cursor-pointer hover:text-primary-light transition-colors duration-200 leading-tight"
                   whileHover={{ x: 5 }}
                 >
                   {item}
@@ -119,7 +119,7 @@ const Footer = () => {
               ].map((item, index) => (
                 <motion.p
                   key={index}
-                  className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                  className="cursor-pointer hover:text-primary-light transition-colors duration-200 leading-tight"
                   whileHover={{ x: 5 }}
                 >
                   {item}
@@ -140,7 +140,7 @@ const Footer = () => {
               {["AI Connect", "LMS", "TinkerCoders"].map((item, index) => (
                 <motion.p
                   key={index}
-                  className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                  className="cursor-pointer hover:text-primary-light transition-colors duration-200 leading-tight"
                   whileHover={{ x: 5 }}
                 >
                   {item}
@@ -162,7 +162,7 @@ const Footer = () => {
                 (item, index) => (
                   <motion.p
                     key={index}
-                    className="cursor-pointer hover:text-yellow-200 transition-colors duration-200 leading-tight"
+                    className="cursor-pointer hover:text-primary-light transition-colors duration-200 leading-tight"
                     whileHover={{ x: 5 }}
                   >
                     {item}

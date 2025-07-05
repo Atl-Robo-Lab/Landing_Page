@@ -16,7 +16,7 @@ const Card = ({
     elevated: 'shadow-medium hover:shadow-large',
     flat: 'shadow-none hover:shadow-soft',
     glass: 'bg-glass backdrop-blur-lg border-white/20',
-    gradient: 'bg-gradient-to-br from-white via-blue-50 to-purple-50 shadow-soft hover:shadow-medium'
+    gradient: 'bg-gradient-primary-secondary-light shadow-soft hover:shadow-medium'
   };
 
   const cardVariants = {

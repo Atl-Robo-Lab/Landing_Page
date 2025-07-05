@@ -149,7 +149,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="bg-secondary-light">
       <div className="py-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
@@ -163,7 +163,7 @@ const Contact = () => {
               Get In Touch
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Let's Transform Your <span className="text-gradient">School Together</span>
+              Let's Transform Your <span className="text-gradient-primary-secondary">School Together</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to bring cutting-edge STEM education to your institution? 
@@ -207,7 +207,7 @@ const Contact = () => {
                     {['🌐', '📘', '📷', '🐦', '💼'].map((icon, index) => (
                       <motion.div
                         key={index}
-                        className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white cursor-pointer"
+                        className="w-10 h-10 bg-gradient-primary-secondary rounded-full flex items-center justify-center text-white cursor-pointer"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -236,7 +236,7 @@ const Contact = () => {
                           key={lab.id}
                           className={`p-3 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
                             formData.labType === lab.id
-                              ? 'border-blue-500 bg-blue-50'
+                              ? 'border-primary bg-primary-light'
                               : 'border-gray-200 hover:border-gray-300'
                           }`}
                           whileHover={{ scale: 1.02 }}
@@ -301,7 +301,7 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message <span className="text-red-500">*</span>
+                      Message <span className="text-accent">*</span>
                     </label>
                     <motion.textarea
                       name="message"
@@ -310,15 +310,15 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
                         errors.message
-                          ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'
+                          ? 'border-accent focus:border-accent focus:ring-accent'
+                          : 'border-gray-300 focus:border-primary focus:ring-primary'
                       }`}
                       placeholder="Tell us about your requirements, school size, or any specific questions..."
                       whileFocus={{ scale: 1.01 }}
                     />
                     {errors.message && (
                       <motion.p
-                        className="mt-2 text-sm text-red-500"
+                        className="mt-2 text-sm text-accent"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                       >

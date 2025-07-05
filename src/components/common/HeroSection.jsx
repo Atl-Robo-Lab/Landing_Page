@@ -65,8 +65,8 @@ const HeroSection = () => {
             className="h-full w-full"
             style={{
               backgroundImage: `
-              linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px)
             `,
               backgroundSize: "30px 30px",
             }}
@@ -101,7 +101,7 @@ const HeroSection = () => {
             >
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl h-40 sm:h-48 lg:h-64 flex items-center justify-center relative overflow-hidden">
                 <motion.div
-                  className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl"
+                  className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-primary-secondary rounded-2xl flex items-center justify-center shadow-xl"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   variants={rotateVariants}
                   animate="animate"
@@ -111,7 +111,7 @@ const HeroSection = () => {
 
                 {/* Tech Particles */}
                 <motion.div
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full"
+                  className="absolute top-2 right-2 sm:top-4 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full"
                   animate={{
                     opacity: [0, 1, 0],
                     scale: [0, 1, 0],
@@ -123,7 +123,7 @@ const HeroSection = () => {
                   }}
                 />
                 <motion.div
-                  className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-indigo-500 rounded-full"
+                  className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary rounded-full"
                   animate={{
                     opacity: [0, 1, 0],
                     scale: [0, 1, 0],
@@ -140,7 +140,7 @@ const HeroSection = () => {
                 <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">
                   SOLUTION FOR YOUR SCHOOL?
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-xs md:text-sm leading-relaxed">
+                <p className="text-neutral text-xs sm:text-xs md:text-sm leading-relaxed">
                   No need to look further - ATLROBO is the One-Stop Solution!
                 </p>
               </div>
@@ -148,7 +148,7 @@ const HeroSection = () => {
 
             {/* Floating Tech Cards - smaller on mobile */}
             <motion.div
-              className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-gradient-to-br from-yellow-400 to-orange-500 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center shadow-xl"
+              className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-gradient-accent w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center shadow-xl"
               variants={floatingVariants}
               animate="animate"
               whileHover={{ scale: 1.2, rotate: 15 }}
@@ -158,7 +158,7 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-gradient-to-br from-purple-500 to-pink-500 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-xl"
+              className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-gradient-secondary-accent w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-xl"
               variants={floatingVariants}
               animate="animate"
               whileHover={{ scale: 1.3, rotate: -15 }}
@@ -168,7 +168,7 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.div
-              className="absolute top-1/3 -left-4 sm:-left-6 lg:-left-8 bg-gradient-to-br from-cyan-400 to-blue-500 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg"
+              className="absolute top-1/3 -left-4 sm:-left-6 lg:-left-8 bg-gradient-accent-success w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg"
               variants={floatingVariants}
               animate="animate"
               whileHover={{ scale: 1.2 }}
@@ -181,7 +181,7 @@ const HeroSection = () => {
             {[...Array(4)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-blue-400 rounded-full hidden sm:block"
+                className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-primary rounded-full hidden sm:block"
                 style={{
                   top: `${20 + i * 15}%`,
                   right: `${10 + i * 5}%`,
@@ -204,11 +204,11 @@ const HeroSection = () => {
           {/* Right Content */}
           <div className="text-gray-900 space-y-4 sm:space-y-6 lg:space-y-8 text-center">
             <motion.div
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full inline-block text-xs sm:text-sm font-semibold shadow-lg"
+              className="bg-gradient-primary-secondary text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full inline-block text-xs sm:text-sm font-semibold shadow-lg"
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 8px 25px rgba(59, 130, 246, 0.4)",
+                boxShadow: "0 8px 25px rgba(37, 99, 235, 0.4)",
                 y: -2,
               }}
             >
@@ -223,22 +223,22 @@ const HeroSection = () => {
                 Transform Education with
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+              <span className="text-gradient-primary-secondary text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 ATL Lab
               </span>
               ,{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+              <span className="text-gradient-secondary-accent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 AI Lab
               </span>{" "}
               &
               <br />
-              <span className="bg-gradient-to-r from-orange-300 to-red-500 bg-clip-text text-transparent text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              <span className="text-gradient-accent text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                 AR & VR Lab Setup
               </span>
             </motion.h1>
 
             <motion.div className="space-y-2 sm:space-y-4 text-center" variants={itemVariants}>
-              <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+              <p className="text-neutral text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                 Advanced Learning Ecosystem
               </p>
             </motion.div>
@@ -255,7 +255,7 @@ const HeroSection = () => {
               <h2 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-900 leading-tight">
                 Complete ATLROBOLAB Solution
               </h2>
-              <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base leading-relaxed">
+              <p className="text-neutral mb-3 sm:mb-4 text-xs sm:text-sm md:text-base leading-relaxed">
                 Robotics Lab • AI & Coding • AI & IoT Lab • AR & VR • ATL Lab
               </p>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
@@ -265,7 +265,7 @@ const HeroSection = () => {
                 >
                   <Link
                     to="/contact"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-xs sm:text-sm md:text-base"
+                    className="bg-gradient-primary-secondary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-xs sm:text-sm md:text-base"
                   >
                     📞 Book Demo
                   </Link>

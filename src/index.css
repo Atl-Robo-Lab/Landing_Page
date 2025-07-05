@@ -1,1 +1,88 @@
 @import "tailwindcss";
+
+/* Test classes to verify Tailwind is working */
+.test-primary { background-color: #ea580c; }
+.test-secondary { background-color: #a16207; }
+.test-accent { background-color: #dc2626; }
+.test-neutral { background-color: #78716c; }
+.test-success { background-color: #059669; }
+
+/* Custom Color Utility Classes for ATLROBOLAB Warm Professional Theme */
+
+/* Primary Color (Warm Orange) */
+.text-primary { color: #ea580c; }
+.bg-primary { background-color: #ea580c; }
+.border-primary { border-color: #ea580c; }
+.hover\:text-primary:hover { color: #ea580c; }
+.hover\:bg-primary:hover { background-color: #ea580c; }
+.hover\:border-primary:hover { border-color: #ea580c; }
+
+/* Secondary Color (Golden Brown) */
+.text-secondary { color: #a16207; }
+.bg-secondary { background-color: #a16207; }
+.border-secondary { border-color: #a16207; }
+.hover\:text-secondary:hover { color: #a16207; }
+.hover\:bg-secondary:hover { background-color: #a16207; }
+.hover\:border-secondary:hover { border-color: #a16207; }
+
+/* Accent Color (Deep Red) */
+.text-accent { color: #dc2626; }
+.bg-accent { background-color: #dc2626; }
+.border-accent { border-color: #dc2626; }
+.hover\:text-accent:hover { color: #dc2626; }
+.hover\:bg-accent:hover { background-color: #dc2626; }
+.hover\:border-accent:hover { border-color: #dc2626; }
+
+/* Neutral Color (Warm Gray) */
+.text-neutral { color: #78716c; }
+.bg-neutral { background-color: #78716c; }
+.border-neutral { border-color: #78716c; }
+.hover\:text-neutral:hover { color: #78716c; }
+.hover\:bg-neutral:hover { background-color: #78716c; }
+.hover\:border-neutral:hover { border-color: #78716c; }
+
+/* Success Color (Emerald Green) */
+.text-success { color: #059669; }
+.bg-success { background-color: #059669; }
+.border-success { border-color: #059669; }
+.hover\:text-success:hover { color: #059669; }
+.hover\:bg-success:hover { background-color: #059669; }
+.hover\:border-success:hover { border-color: #059669; }
+
+/* Light Variants for Backgrounds (Static Colors) */
+.bg-primary-light { background-color: #fed7aa; }
+.bg-secondary-light { background-color: #fef3c7; }
+.bg-accent-light { background-color: #fecaca; }
+.bg-neutral-light { background-color: #f3f4f6; }
+.bg-success-light { background-color: #d1fae5; }
+
+/* Dark Variants for Text (Static Colors) */
+.text-primary-dark { color: #c2410c; }
+.text-secondary-dark { color: #92400e; }
+.text-accent-dark { color: #b91c1c; }
+.text-neutral-dark { color: #374151; }
+.text-success-dark { color: #047857; }
+
+/* Gradient Utilities for the Warm Professional Theme */
+.bg-gradient-primary { background: linear-gradient(135deg, #ea580c, #dc2626); }
+.bg-gradient-secondary { background: linear-gradient(135deg, #a16207, #92400e); }
+.bg-gradient-accent { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.bg-gradient-success { background: linear-gradient(135deg, #059669, #047857); }
+
+/* Multi-color Gradients */
+.bg-gradient-primary-secondary { background: linear-gradient(135deg, #ea580c, #a16207); }
+.bg-gradient-secondary-accent { background: linear-gradient(135deg, #a16207, #dc2626); }
+.bg-gradient-accent-success { background: linear-gradient(135deg, #dc2626, #059669); }
+.bg-gradient-primary-accent { background: linear-gradient(135deg, #ea580c, #dc2626); }
+
+/* Text Gradient Utilities */
+.text-gradient-primary { background: linear-gradient(135deg, #ea580c, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-secondary { background: linear-gradient(135deg, #a16207, #92400e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-accent { background: linear-gradient(135deg, #dc2626, #b91c1c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-success { background: linear-gradient(135deg, #059669, #047857); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Multi-color Text Gradients */
+.text-gradient-primary-secondary { background: linear-gradient(135deg, #ea580c, #a16207); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-secondary-accent { background: linear-gradient(135deg, #a16207, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-accent-success { background: linear-gradient(135deg, #dc2626, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-gradient-primary-accent { background: linear-gradient(135deg, #ea580c, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }

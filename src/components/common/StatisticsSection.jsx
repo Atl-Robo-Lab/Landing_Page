@@ -12,35 +12,35 @@ const StatisticsSection = () => {
       label: 'Schools',
       icon: '🏫',
       description: 'Transforming education worldwide',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'bg-gradient-primary-secondary'
     },
     {
       number: '2M+',
       label: 'Students',
       icon: '👨‍🎓',
       description: 'Empowering young minds',
-      color: 'from-purple-500 to-pink-500'
+      color: 'bg-gradient-secondary-accent'
     },
     {
       number: '30+',
       label: 'Countries',
       icon: '🌍',
       description: 'Global educational impact',
-      color: 'from-green-500 to-teal-500'
+      color: 'bg-gradient-accent-success'
     },
     {
       number: '30K+',
       label: 'Teachers',
       icon: '👩‍🏫',
       description: 'Trained educators',
-      color: 'from-orange-500 to-red-500'
+      color: 'bg-gradient-primary-accent'
     },
     {
       number: '97%',
       label: 'Success Rate',
       icon: '🎯',
       description: 'Curriculum acceptance',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'bg-gradient-primary-secondary'
     }
   ];
 
@@ -81,13 +81,13 @@ const StatisticsSection = () => {
         transition={{ duration: 0.3 }}
       >
         {/* Background with gradient */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
+        <div className={`absolute inset-0 ${stat.color} rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
         
         {/* Main card */}
         <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-500 text-center">
           {/* Icon */}
           <motion.div
-            className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto mb-3 md:mb-4 lg:mb-6 rounded-xl md:rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-lg md:text-xl lg:text-2xl shadow-lg`}
+            className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto mb-3 md:mb-4 lg:mb-6 rounded-xl md:rounded-2xl ${stat.color} flex items-center justify-center text-lg md:text-xl lg:text-2xl shadow-lg`}
             whileHover={{ 
               scale: 1.1, 
               rotate: [0, 5, -5, 0],
@@ -99,7 +99,7 @@ const StatisticsSection = () => {
 
           {/* Number */}
           <motion.div
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-3 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2 md:mb-3 text-gradient-primary-secondary`}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ 
@@ -137,7 +137,7 @@ const StatisticsSection = () => {
 
           {/* Floating elements */}
           <motion.div
-            className={`absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r ${stat.color} opacity-30`}
+            className={`absolute top-4 right-4 w-3 h-3 rounded-full ${stat.color} opacity-30`}
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.6, 0.3]
@@ -154,10 +154,10 @@ const StatisticsSection = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50" ref={ref}>
+    <section className="py-12 md:py-20 lg:py-24 relative overflow-hidden bg-success-light" ref={ref}>
       {/* Modern Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-white to-teal-50/50"></div>
+        <div className="absolute inset-0 bg-success-light opacity-50"></div>
         
         {/* Large Submerged Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -167,8 +167,8 @@ const StatisticsSection = () => {
         </div>
         
         {/* Floating shapes */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-emerald-100/30 to-teal-100/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-cyan-100/25 to-blue-100/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-success-light rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-primary-light rounded-full blur-3xl"></div>
         
         {/* Subtle pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -210,7 +210,7 @@ const StatisticsSection = () => {
             viewport={{ once: true }}
           >
             TRANSFORMING
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="block text-gradient-primary-secondary">
               EDUCATION
             </span>
           </motion.h2>
@@ -250,7 +250,7 @@ const StatisticsSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12 text-white relative overflow-hidden mx-4 md:mx-0">
+          <div className="bg-gradient-primary-secondary rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12 text-white relative overflow-hidden mx-4 md:mx-0">
             {/* Submerged background text */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
               <span className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-white/5 select-none">
