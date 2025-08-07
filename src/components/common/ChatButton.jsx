@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HiLightBulb, HiPhone, HiChat, HiX } from 'react-icons/hi';
+import { TbRobot } from 'react-icons/tb';
 
 const ChatButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -64,7 +66,7 @@ const ChatButton = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2 lg:space-x-3">
                     <div className="w-8 h-8 lg:w-10 lg:h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-lg lg:text-xl">🤖</span>
+                      <TbRobot className="text-lg lg:text-xl text-white" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-xs lg:text-sm">ATLROBOLAB Support</h3>
@@ -99,7 +101,7 @@ const ChatButton = () => {
                   >
                     <div className="flex items-center space-x-2 lg:space-x-3">
                       <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-100 to-blue-200 group-hover:from-blue-200 group-hover:to-blue-300 rounded-xl flex items-center justify-center transition-all duration-300">
-                        <span className="text-lg lg:text-xl">📞</span>
+                        <HiPhone className="text-lg lg:text-xl text-blue-600" />
                       </div>
                       <div className="flex-1 text-left">
                         <h4 className="font-semibold text-gray-900 text-xs lg:text-sm mb-0.5 lg:mb-1">Call Us Now</h4>
@@ -123,7 +125,7 @@ const ChatButton = () => {
                   >
                     <div className="flex items-center space-x-2 lg:space-x-3">
                       <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-100 to-green-200 group-hover:from-green-200 group-hover:to-green-300 rounded-xl flex items-center justify-center transition-all duration-300">
-                        <span className="text-lg lg:text-xl">💬</span>
+                        <HiChat className="text-lg lg:text-xl text-green-600" />
                       </div>
                       <div className="flex-1 text-left">
                         <h4 className="font-semibold text-gray-900 text-xs lg:text-sm mb-0.5 lg:mb-1">WhatsApp Chat</h4>
@@ -142,7 +144,10 @@ const ChatButton = () => {
                 {/* Footer Message */}
                 <div className="mt-3 lg:mt-4 pt-2 lg:pt-3 border-t border-gray-200">
                   <div className="text-center">
-                    <p className="text-xs text-gray-500 mb-0.5 lg:mb-1">💡 Need help choosing the right solution?</p>
+                    <p className="text-xs text-gray-500 mb-0.5 lg:mb-1 flex items-center justify-center gap-1">
+                      <HiLightBulb className="text-sm" />
+                      <span>Need help choosing the right solution?</span>
+                    </p>
                     <p className="text-xs text-gray-400">Our experts are ready to assist you!</p>
                   </div>
                 </div>
@@ -184,7 +189,7 @@ const ChatButton = () => {
               }}
               transition={{ duration: 0.3 }}
             >
-              {isExpanded ? '✕' : '💬'}
+              {isExpanded ? <HiX className="text-white" /> : <HiChat className="text-white" />}
             </motion.span>
           </div>
 

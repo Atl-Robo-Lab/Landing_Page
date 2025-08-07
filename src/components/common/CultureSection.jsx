@@ -1,6 +1,12 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { TbRobot } from 'react-icons/tb';
+import { HiLightBulb, HiUsers, HiComputerDesktop } from 'react-icons/hi2';
+import { FaMicroscope, FaPalette } from 'react-icons/fa';
+import { HiStar, HiFlag } from 'react-icons/hi';
+import { FaHandshake } from 'react-icons/fa';
+import { HiRocketLaunch } from 'react-icons/hi2';
 
 const CultureSection = () => {
   const ref = useRef(null);
@@ -11,7 +17,7 @@ const CultureSection = () => {
       id: 1, 
       title: 'Robotics Innovation',
       description: 'Students designing and building next-generation robots', 
-      emoji: '🤖',
+      icon: TbRobot,
       gradient: 'from-blue-500 to-cyan-500',
       bgColor: 'from-blue-50/50 to-cyan-50/50'
     },
@@ -19,7 +25,7 @@ const CultureSection = () => {
       id: 2, 
       title: 'Creative Solutions',
       description: 'Innovation workshops fostering breakthrough thinking', 
-      emoji: '💡',
+      icon: HiLightBulb,
       gradient: 'from-yellow-500 to-orange-500',
       bgColor: 'from-yellow-50/50 to-orange-50/50'
     },
@@ -27,7 +33,7 @@ const CultureSection = () => {
       id: 3, 
       title: 'Team Collaboration',
       description: 'Building tomorrow through collaborative learning', 
-      emoji: '👥',
+      icon: HiUsers,
       gradient: 'from-purple-500 to-pink-500',
       bgColor: 'from-purple-50/50 to-pink-50/50'
     },
@@ -35,7 +41,7 @@ const CultureSection = () => {
       id: 4, 
       title: 'STEM Excellence',
       description: 'Advanced laboratory environments for discovery', 
-      emoji: '🔬',
+      icon: FaMicroscope,
       gradient: 'from-green-500 to-teal-500',
       bgColor: 'from-green-50/50 to-teal-50/50'
     },
@@ -43,7 +49,7 @@ const CultureSection = () => {
       id: 5, 
       title: 'Tech Integration',
       description: 'Seamless technology integration in education', 
-      emoji: '💻',
+      icon: HiComputerDesktop,
       gradient: 'from-indigo-500 to-purple-500',
       bgColor: 'from-indigo-50/50 to-purple-50/50'
     },
@@ -51,7 +57,7 @@ const CultureSection = () => {
       id: 6, 
       title: 'Future Learning',
       description: 'Creative spaces designed for 21st-century skills', 
-      emoji: '🎨',
+      icon: FaPalette,
       gradient: 'from-pink-500 to-rose-500',
       bgColor: 'from-pink-50/50 to-rose-50/50'
     },
@@ -156,7 +162,7 @@ const CultureSection = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, y: -2 }}
           >
-            <span className="text-2xl">🌟</span>
+            <HiStar className="text-2xl text-yellow-500" />
             <span className="font-semibold text-gray-700">Innovation Culture</span>
           </motion.div>
 
@@ -205,11 +211,11 @@ const CultureSection = () => {
               
               {/* Main card */}
               <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full overflow-hidden">
-                {/* Floating background emoji */}
+                {/* Floating background icon */}
                 <div className="absolute top-4 right-4 opacity-10 pointer-events-none">
-                  <span className="text-8xl transform rotate-12">
-                    {aspect.emoji}
-                  </span>
+                  <div className="text-8xl transform rotate-12 text-gray-400">
+                    <aspect.icon />
+                  </div>
                 </div>
                 
                 {/* Main content */}
@@ -223,7 +229,7 @@ const CultureSection = () => {
                       transition: { duration: 0.6 }
                     }}
                   >
-                    {aspect.emoji}
+                    <aspect.icon className="text-white" />
                   </motion.div>
 
                   {/* Title */}
@@ -331,9 +337,9 @@ const CultureSection = () => {
                 viewport={{ once: true }}
               >
                 {[
-                  { icon: '🎯', title: 'Goal-Oriented', desc: 'Purpose-driven learning' },
-                  { icon: '🤝', title: 'Collaborative', desc: 'Team-based projects' },
-                  { icon: '🚀', title: 'Future-Ready', desc: '21st century skills' }
+                  { icon: HiFlag, title: 'Goal-Oriented', desc: 'Purpose-driven learning' },
+                  { icon: FaHandshake, title: 'Collaborative', desc: 'Team-based projects' },
+                  { icon: HiRocketLaunch, title: 'Future-Ready', desc: '21st century skills' }
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -341,7 +347,9 @@ const CultureSection = () => {
                     whileHover={{ scale: 1.05, y: -5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-3xl mb-3">{feature.icon}</div>
+                    <div className="text-3xl mb-3 text-white">
+                      <feature.icon />
+                    </div>
                     <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
                     <p className="text-blue-200 text-sm">{feature.desc}</p>
                   </motion.div>

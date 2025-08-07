@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { HiDeviceMobile } from 'react-icons/hi';
 import { FaXTwitter } from "react-icons/fa6";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   const containerVariants = {
@@ -59,7 +60,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="ATLROBOLAB"
-                className="h-8 sm:h-10 md:h-12 w-auto mb-3 sm:mb-4"
+                className="h-12 sm:h-14 md:h-16 w-auto mb-3 sm:mb-4"
               />
               <div className="text-xs sm:text-sm leading-relaxed">
                 <p className="mb-1">
@@ -191,7 +192,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="text-xs mr-1">📱</span>
+                  <HiDeviceMobile className="text-xs mr-1" />
                   <span className="text-xs">Google Play</span>
                 </motion.a>
               </div>
@@ -224,7 +225,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-sm mr-2">📱</span>
+              <HiDeviceMobile className="text-sm mr-2" />
               <div>
                 <div className="text-xs opacity-75">Get it on</div>
                 <div className="font-semibold text-xs">Google Play</div>

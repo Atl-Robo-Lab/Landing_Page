@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,7 +80,7 @@ const Header = () => {
       }}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           {/* Logo Section */}
           <motion.div 
             className="flex items-center"
@@ -91,7 +91,7 @@ const Header = () => {
               <motion.img
                 src={logo}
                 alt="ATLROBOLAB"
-                className="h-8 sm:h-10 w-auto drop-shadow-lg"
+                className="h-12 sm:h-14 md:h-16 w-auto drop-shadow-lg"
                 initial={{ rotate: 0 }}
                 whileHover={{ rotate: 0, filter: "brightness(1.1)" }}
                 transition={{ duration: 0.5 }}
