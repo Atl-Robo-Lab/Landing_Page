@@ -1,5 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { HiRocketLaunch, HiComputerDesktop, HiWifi } from 'react-icons/hi2';
+import { HiFlag } from 'react-icons/hi';
+import { FaHandshake, FaMicroscope } from 'react-icons/fa';
+import { TbRobot } from 'react-icons/tb';
 // Import specific images for each lab type
 import stemRoboticsImg from "../../assets/images/stem-robotics-lab.jpg";
 import aiIotImg from "../../assets/images/ai-iot-lab.jpg";
@@ -11,67 +15,67 @@ import engineeringImg from "../../assets/images/engineering-lab.jpg";
 const OfferingsSection = () => {
   const offerings = [
     {
-      title: "STEM & ROBOTICS LAB",
-      shortTitle: "STEM LAB",
-      icon: "🤖",
+      title: "STATE-OF-THE-ART COMPUTER LABS",
+      shortTitle: "COMPUTER LABS",
+      icon: HiComputerDesktop,
       description:
-        "Engage students in hands-on learning, critical thinking, and exploration with our comprehensive STEM & Robotics program.",
-      features: ["Robotics Kits", "STEM Curriculum", "Project-Based Learning"],
+        "We design and build modern, fully-equipped labs with high-performance computers, smart boards, robotics kits, and all necessary peripherals to create dynamic and productive learning spaces tailored to your institution's specific needs.",
+      features: ["High-Performance Computers", "Interactive Smart Boards", "Robotics Kits (Arduino, Raspberry Pi)", "Modern Software Suite"],
       gradient: "bg-gradient-primary-secondary",
       bgPattern: "bg-primary-light",
       image: stemRoboticsImg,
     },
     {
-      title: "AI AND IOT LAB",
-      shortTitle: "AI LAB",
-      icon: "🧠",
+      title: "CAMPUS-WIDE WI-FI INFRASTRUCTURE",
+      shortTitle: "WI-FI NETWORK",
+      icon: HiWifi,
       description:
-        "Introduce students to Artificial Intelligence and Internet of Things through practical experiments and real-world applications.",
-      features: ["Machine Learning", "IoT Devices", "Smart Systems"],
+        "We deploy robust, high-speed networking infrastructure to provide powerful and stable Wi-Fi coverage across every corner of your campus—from classrooms and libraries to administrative offices and common areas.",
+      features: ["Enterprise-Grade Routers", "High-Density Access Points", "Network Switches", "Complete Coverage"],
       gradient: "bg-gradient-secondary-accent",
       bgPattern: "bg-secondary-light",
       image: aiIotImg,
     },
     {
-      title: "ATAL TINKERING LAB",
-      shortTitle: "ATAL LAB",
-      icon: "⚡",
+      title: "COMPREHENSIVE SUPPORT & TRAINING",
+      shortTitle: "SUPPORT SERVICES",
+      icon: FaHandshake,
       description:
-        "Foster curiosity, creativity and imagination in young minds through design thinking and computational problem-solving.",
-      features: ["3D Printing", "Electronics", "Innovation Hub"],
+        "Our commitment to you extends far beyond installation. We provide comprehensive teacher training, ongoing maintenance, and technical support to guarantee that your systems run smoothly, minimizing downtime and maximizing learning time.",
+      features: ["Teacher Training Programs", "24/7 Technical Support", "Regular Maintenance", "System Monitoring"],
       gradient: "bg-gradient-primary-accent",
       bgPattern: "bg-accent-light",
       image: atalTinkeringImg,
     },
     {
-      title: "21ST CENTURY LEARNING",
-      shortTitle: "FUTURE LEARNING",
-      icon: "🚀",
+      title: "ADVANCED LAB EQUIPMENT",
+      shortTitle: "LAB EQUIPMENT",
+      icon: FaMicroscope,
       description:
-        "Boost student achievement by encouraging creative thinking and producing engaging educational experiences.",
-      features: ["Digital Literacy", "Creative Projects", "Modern Pedagogy"],
+        "We provide high-performance desktop computers and laptops, powerful servers for managing your network, and interactive smart boards that turn any classroom into an engaging learning environment.",
+      features: ["Desktop & Laptop Computers", "Network Servers", "Smart Interactive Boards", "STEM Learning Tools"],
       gradient: "bg-gradient-accent-success",
       bgPattern: "bg-success-light",
       image: centuryLearningImg,
     },
     {
-      title: "INNOVATION LAB",
-      shortTitle: "INNOVATION",
-      icon: "💡",
+      title: "ROBOTICS & INNOVATION KITS",
+      shortTitle: "ROBOTICS KITS",
+      icon: TbRobot,
       description:
-        "Experience a broad range of STEM activities that converge into integrated solutions through collaborative learning.",
-      features: ["Design Thinking", "Prototyping", "Research Projects"],
+        "Our robotics kits, including popular platforms like Arduino and Raspberry Pi, give students hands-on experience with coding and engineering, fostering innovation and creativity.",
+      features: ["Arduino Development Kits", "Raspberry Pi Systems", "Sensor Integration", "Programming Tools"],
       gradient: "bg-gradient-primary-secondary",
       bgPattern: "bg-neutral-light",
       image: innovationImg,
     },
     {
-      title: "ENGINEERING LAB",
-      shortTitle: "ENGINEERING",
-      icon: "⚙️",
+      title: "FUTURE-READY DIGITAL TOOLS",
+      shortTitle: "DIGITAL TOOLS",
+      icon: HiRocketLaunch,
       description:
-        "Integrate technology with hands-on engineering through multidisciplinary project-based learning experiences.",
-      features: ["CAD Design", "Engineering Projects", "Team Collaboration"],
+        "We provide a curated selection of educational software, digital learning tools, and robotics kits that align with modern curricula and inspire innovation in students across Bihar.",
+      features: ["Educational Software", "Digital Learning Platforms", "Interactive Content", "Assessment Tools"],
       gradient: "bg-gradient-secondary-accent",
       bgPattern: "bg-neutral-light",
       image: engineeringImg,
@@ -153,8 +157,8 @@ const OfferingsSection = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, y: -2 }}
           >
-            <span className="text-lg sm:text-xl md:text-2xl">🎯</span>
-            <span className="font-semibold text-white text-sm sm:text-base">Our Lab Solutions</span>
+            <HiFlag className="text-lg sm:text-xl md:text-2xl" />
+            <span className="font-semibold text-white text-sm sm:text-base">ATL ROBO Solutions</span>
           </motion.div>
 
           <motion.h2
@@ -164,9 +168,9 @@ const OfferingsSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            TRANSFORM YOUR
+            COMPLETE EDUCATIONAL
             <span className="block text-gradient-accent-success">
-              EDUCATION
+              INFRASTRUCTURE
             </span>
           </motion.h2>
 
@@ -177,7 +181,7 @@ const OfferingsSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Comprehensive lab solutions designed for the 21st century learning
+            Complete turnkey solutions covering every aspect of your institution's digital upgrade - from state-of-the-art computer labs to campus-wide Wi-Fi infrastructure and comprehensive support
             experience
           </motion.p>
         </motion.div>
@@ -230,7 +234,9 @@ const OfferingsSection = () => {
                         transition: { duration: 0.5 },
                       }}
                     >
-                      {offering.icon}
+                      <div className="text-white">
+                        <offering.icon />
+                      </div>
                     </motion.div>
 
                     {/* Submerged Title in Background */}
@@ -331,7 +337,10 @@ const OfferingsSection = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                🚀 Get Started Today
+                <div className="flex items-center gap-2">
+                  <HiRocketLaunch className="text-lg" />
+                  <span>Get Started Today</span>
+                </div>
               </motion.button>
             </div>
           </motion.div>

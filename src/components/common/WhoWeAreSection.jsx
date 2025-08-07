@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { HiWifi, HiRocketLaunch } from 'react-icons/hi2';
+import { FaSchool, FaHandshake, FaTrophy } from 'react-icons/fa';
 
 const WhoWeAreSection = () => {
   const containerVariants = {
@@ -27,21 +29,21 @@ const WhoWeAreSection = () => {
 
   const features = [
     {
-      icon: "🎯",
-      title: "Mission",
-      description: "Empowering students with cutting-edge technology education",
+      icon: FaSchool,
+      title: "Modern Lab Setup",
+      description: "We design and build state-of-the-art labs with high-performance computers, smart boards, robotics kits, and all necessary peripherals to create dynamic and productive learning spaces tailored to your institution's specific needs.",
       gradient: "bg-gradient-primary-secondary-light",
     },
     {
-      icon: "👁️",
-      title: "Vision",
-      description: "Creating future-ready innovators and problem solvers",
+      icon: HiWifi,
+      title: "Campus Wi-Fi Infrastructure",
+      description: "We deploy robust, high-speed networking infrastructure providing powerful and stable Wi-Fi coverage across every corner of your campus—from classrooms and libraries to administrative offices and common areas.",
       gradient: "bg-gradient-success-primary-light",
     },
     {
-      icon: "💎",
-      title: "Values",
-      description: "Excellence, Innovation, Collaboration, and Growth",
+      icon: FaHandshake,
+      title: "Complete Support & Training",
+      description: "Our commitment extends far beyond installation. We provide comprehensive teacher training, ongoing maintenance, and technical support to ensure your systems run smoothly, maximizing learning time.",
       gradient: "bg-gradient-accent-success-light",
     },
   ];
@@ -68,26 +70,31 @@ const WhoWeAreSection = () => {
               y: -2,
             }}
           >
-            🏆 Who We Are
+            <div className="flex items-center gap-2">
+              <FaTrophy className="text-lg" />
+              <span>Who We Are</span>
+            </div>
           </motion.div>
 
           <motion.h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
             variants={itemVariants}
           >
-            Leading{" "}
+            ATL ROBO:{" "}
             <span className="text-gradient-primary-secondary">
-              Educational Technology
+              Smart Infrastructure Solutions
             </span>{" "}
-            Provider
+            for Bihar's Future
           </motion.h2>
 
           <motion.p
-            className="text-neutral text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-neutral text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            We specialize in setting up state-of-the-art ATL Labs, AI & IoT Labs, and AR & VR Labs 
-            for educational institutions, empowering students with hands-on learning experiences.
+            We are a pioneering force dedicated to transforming schools and colleges across Bihar into modern hubs of innovation and learning. 
+            Our mission is clear and resolute: to bridge the critical infrastructure gap in education by designing, deploying, and managing 
+            state-of-the-art computer labs, ensuring seamless and reliable Wi-Fi connectivity across entire campuses, and providing the 
+            innovative learning tools that make education engaging, effective, and inspiring.
           </motion.p>
         </motion.div>
 
@@ -118,7 +125,9 @@ const WhoWeAreSection = () => {
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-primary-secondary rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl sm:text-3xl">{feature.icon}</span>
+                    <div className="text-2xl sm:text-3xl text-white">
+                      <feature.icon />
+                    </div>
                   </div>
 
                   {/* Title */}
@@ -171,7 +180,10 @@ const WhoWeAreSection = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            🚀 Start Your Educational Journey
+            <div className="flex items-center gap-2">
+              <HiRocketLaunch className="text-lg" />
+              <span>Transform Your Campus Today</span>
+            </div>
           </motion.div>
         </motion.div>
       </div>

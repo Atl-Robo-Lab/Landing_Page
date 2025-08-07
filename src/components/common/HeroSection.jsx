@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { TbRobot } from 'react-icons/tb';
+import { FaBrain, FaMicroscope } from 'react-icons/fa';
+import { HiLightningBolt, HiPhone } from 'react-icons/hi';
+import { HiRocketLaunch } from 'react-icons/hi2';
 
 const HeroSection = () => {
   const containerVariants = {
@@ -106,7 +110,7 @@ const HeroSection = () => {
                   variants={rotateVariants}
                   animate="animate"
                 >
-                  <span className="text-2xl sm:text-3xl lg:text-4xl">🤖</span>
+                  <TbRobot className="text-2xl sm:text-3xl lg:text-4xl text-white" />
                 </motion.div>
 
                 {/* Tech Particles */}
@@ -154,7 +158,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.2, rotate: 15 }}
               style={{ animationDelay: "1s" }}
             >
-              <span className="text-lg sm:text-xl lg:text-2xl">🧠</span>
+              <FaBrain className="text-lg sm:text-xl lg:text-2xl text-white" />
             </motion.div>
 
             <motion.div
@@ -164,7 +168,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.3, rotate: -15 }}
               style={{ animationDelay: "2s" }}
             >
-              <span className="text-sm sm:text-base lg:text-xl">⚡</span>
+              <HiLightningBolt className="text-sm sm:text-base lg:text-xl text-white" />
             </motion.div>
 
             <motion.div
@@ -174,7 +178,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.2 }}
               style={{ animationDelay: "1.5s" }}
             >
-              <span className="text-sm sm:text-base lg:text-lg">🔬</span>
+              <FaMicroscope className="text-sm sm:text-base lg:text-lg text-white" />
             </motion.div>
 
             {/* Floating Particles - fewer on mobile */}
@@ -212,7 +216,10 @@ const HeroSection = () => {
                 y: -2,
               }}
             >
-              🚀 Looking Robotics Lab For School
+              <div className="flex items-center justify-center gap-2">
+                <HiRocketLaunch className="text-sm sm:text-base" />
+                <span>Smart Infrastructure Solutions for Future-Ready Schools & Colleges</span>
+              </div>
             </motion.div>
 
             <motion.h1
@@ -220,26 +227,25 @@ const HeroSection = () => {
               variants={itemVariants}
             >
               <span className="text-gray-900 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                Transform Education with
+                Building the Future of Education in
               </span>
               <br />
               <span className="text-gradient-primary-secondary text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                ATL Lab
+                Bihar
               </span>
-              ,{" "}
+              {" "}with{" "}
               <span className="text-gradient-secondary-accent text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                AI Lab
-              </span>{" "}
-              &
+                ATL ROBO
+              </span>
               <br />
               <span className="text-gradient-accent text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                AR & VR Lab Setup
+                Modern Labs & Wi-Fi Infrastructure
               </span>
             </motion.h1>
 
             <motion.div className="space-y-2 sm:space-y-4 text-center" variants={itemVariants}>
               <p className="text-neutral text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-                Advanced Learning Ecosystem
+                Transforming schools and colleges across Bihar into modern hubs of innovation and learning through state-of-the-art computer labs, reliable Wi-Fi connectivity, and cutting-edge educational tools.
               </p>
             </motion.div>
 
@@ -253,10 +259,10 @@ const HeroSection = () => {
               }}
             >
               <h2 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-900 leading-tight">
-                Complete ATLROBOLAB Solution
+                Complete Educational Infrastructure Solution
               </h2>
               <p className="text-neutral mb-3 sm:mb-4 text-xs sm:text-sm md:text-base leading-relaxed">
-                Robotics Lab • AI & Coding • AI & IoT Lab • AR & VR • ATL Lab
+                State-of-the-Art Computer Labs • Campus-Wide Wi-Fi • Robotics Kits • Teacher Training • Complete Setup & Support
               </p>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
                 <motion.div
@@ -267,7 +273,10 @@ const HeroSection = () => {
                     to="/contact"
                     className="bg-gradient-primary-secondary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center block shadow-lg hover:shadow-xl text-xs sm:text-sm md:text-base"
                   >
-                    📞 Book Demo
+                    <div className="flex items-center justify-center gap-2">
+                      <HiPhone className="text-sm sm:text-base" />
+                      <span>Book Demo</span>
+                    </div>
                   </Link>
                 </motion.div>
                 <motion.button

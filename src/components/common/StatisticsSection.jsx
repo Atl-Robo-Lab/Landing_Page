@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { HiWifi } from 'react-icons/hi2';
+import { FaSchool, FaHandshake, FaMoneyBillWave } from 'react-icons/fa';
+import { HiCheckCircle } from 'react-icons/hi';
 
 const StatisticsSection = () => {
   const ref = useRef(null);
@@ -8,38 +11,38 @@ const StatisticsSection = () => {
 
   const stats = [
     {
-      number: '4,000+',
-      label: 'Schools',
-      icon: '🏫',
-      description: 'Transforming education worldwide',
+      number: '500+',
+      label: 'Schools in Bihar',
+      icon: FaSchool,
+      description: 'Transforming education across the state',
       color: 'bg-gradient-primary-secondary'
     },
     {
-      number: '2M+',
-      label: 'Students',
-      icon: '👨‍🎓',
-      description: 'Empowering young minds',
+      number: '₹250-300',
+      label: 'Per Student/Month',
+      icon: FaMoneyBillWave,
+      description: 'Affordable pricing for all institutions',
       color: 'bg-gradient-secondary-accent'
     },
     {
-      number: '30+',
-      label: 'Countries',
-      icon: '🌍',
-      description: 'Global educational impact',
+      number: '100%',
+      label: 'Campus Coverage',
+      icon: HiWifi,
+      description: 'Complete Wi-Fi infrastructure',
       color: 'bg-gradient-accent-success'
     },
     {
-      number: '30K+',
-      label: 'Teachers',
-      icon: '👩‍🏫',
-      description: 'Trained educators',
+      number: '24/7',
+      label: 'Support Available',
+      icon: FaHandshake,
+      description: 'Round-the-clock technical assistance',
       color: 'bg-gradient-primary-accent'
     },
     {
-      number: '97%',
-      label: 'Success Rate',
-      icon: '🎯',
-      description: 'Curriculum acceptance',
+      number: '2',
+      label: 'Basic Requirements',
+      icon: HiCheckCircle,
+      description: 'Stable internet + dedicated lab space',
       color: 'bg-gradient-primary-secondary'
     }
   ];
@@ -94,7 +97,9 @@ const StatisticsSection = () => {
               transition: { duration: 0.5 }
             }}
           >
-            {stat.icon}
+            <div className="text-white">
+              <stat.icon />
+            </div>
           </motion.div>
 
           {/* Number */}

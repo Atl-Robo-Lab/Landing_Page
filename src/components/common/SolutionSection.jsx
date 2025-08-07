@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { HiComputerDesktop, HiRocketLaunch } from 'react-icons/hi2';
+import { HiFlag } from 'react-icons/hi';
+import { FaChalkboardTeacher, FaTrophy, FaMicroscope, FaMobile, FaGraduationCap } from 'react-icons/fa';
 
 const SolutionSection = () => {
   const ref = useRef(null);
@@ -11,7 +15,7 @@ const SolutionSection = () => {
     {
       title: 'Digital Learning Platform',
       description: 'Interactive learning experiences with cutting-edge technology',
-      icon: '💻',
+      icon: HiComputerDesktop,
       gradient: 'bg-gradient-primary-secondary',
       bgColor: 'bg-primary-light',
       features: ['Interactive Content', 'Real-time Assessment', 'Progress Tracking']
@@ -19,7 +23,7 @@ const SolutionSection = () => {
     {
       title: 'Teacher Development',
       description: 'Comprehensive training programs for modern educators',
-      icon: '👨‍🏫',
+      icon: FaChalkboardTeacher,
       gradient: 'bg-gradient-accent-success',
       bgColor: 'bg-success-light',
       features: ['Skill Enhancement', 'Certification Programs', 'Ongoing Support']
@@ -27,7 +31,7 @@ const SolutionSection = () => {
     {
       title: 'Innovation Competitions',
       description: 'National and international contests to showcase talent',
-      icon: '🏆',
+      icon: FaTrophy,
       gradient: 'bg-gradient-secondary-accent',
       bgColor: 'bg-secondary-light',
       features: ['Global Reach', 'Recognition Awards', 'Skill Building']
@@ -35,7 +39,7 @@ const SolutionSection = () => {
     {
       title: 'Complete Lab Setup',
       description: 'End-to-end laboratory infrastructure and equipment',
-      icon: '🔬',
+      icon: FaMicroscope,
       gradient: 'bg-gradient-primary-accent',
       bgColor: 'bg-accent-light',
       features: ['Modern Equipment', 'Safety Standards', 'Maintenance Support']
@@ -43,7 +47,7 @@ const SolutionSection = () => {
     {
       title: 'Learning Management',
       description: 'Advanced mobile app for seamless learning experience',
-      icon: '📱',
+      icon: FaMobile,
       gradient: 'bg-gradient-primary-secondary',
       bgColor: 'bg-neutral-light',
       features: ['Mobile Access', 'Offline Content', 'Parent Dashboard']
@@ -51,7 +55,7 @@ const SolutionSection = () => {
     {
       title: 'Industry Certification',
       description: 'Globally recognized certificates for students and educators',
-      icon: '🎓',
+      icon: FaGraduationCap,
       gradient: 'bg-gradient-accent-success',
       bgColor: 'bg-success-light',
       features: ['Industry Recognition', 'Career Advancement', 'Skill Validation']
@@ -154,12 +158,12 @@ const SolutionSection = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, y: -2 }}
           >
-            <span className="text-lg sm:text-2xl">🚀</span>
-            <span className="font-semibold text-white text-sm sm:text-base">Complete Solutions</span>
+            <HiRocketLaunch className="text-lg sm:text-2xl" />
+            <span className="font-semibold text-gradient-primary-secondary text-sm sm:text-base">Complete Solutions</span>
           </motion.div>
 
           <motion.h2
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 md:mb-8 leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gradient-primary mb-4 sm:mb-6 md:mb-8 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -169,11 +173,11 @@ const SolutionSection = () => {
             <span className="block text-gradient-accent-success">
               EDUCATION
             </span>
-            <span className="block text-white">SOLUTIONS</span>
+            <span className="block text-gradient-primary-secondary">SOLUTIONS</span>
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto px-4"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -212,7 +216,9 @@ const SolutionSection = () => {
                       transition: { duration: 0.5 }
                     }}
                   >
-                    {solution.icon}
+                    <div className="text-white">
+                      <solution.icon />
+                    </div>
                   </motion.div>
                   
                   {/* Floating decoration */}
@@ -318,7 +324,10 @@ const SolutionSection = () => {
                   to="/products"
                   className="inline-block bg-white text-primary px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
-                  🎯 Explore All Solutions
+                  <div className="flex items-center gap-2">
+                    <HiFlag className="text-lg" />
+                    <span>Explore All Solutions</span>
+                  </div>
                 </Link>
               </motion.div>
             </div>
