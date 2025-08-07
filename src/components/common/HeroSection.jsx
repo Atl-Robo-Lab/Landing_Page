@@ -5,6 +5,9 @@ import { TbRobot } from 'react-icons/tb';
 import { FaBrain, FaMicroscope } from 'react-icons/fa';
 import { HiLightningBolt, HiPhone } from 'react-icons/hi';
 import { HiRocketLaunch } from 'react-icons/hi2';
+// Import banner images
+import B1Image from "../../assets/B1.png";
+import B2Image from "../../assets/B2.png";
 
 const HeroSection = () => {
   // State for auto-changing images
@@ -13,13 +16,13 @@ const HeroSection = () => {
   // Image data with sources from assets
   const images = [
     {
-      src: "/src/assets/B1.png",
+      src: B1Image,
       title: "Computer Labs",
       subtitle: "Modern Setup",
       gradient: "from-blue-500 to-indigo-600"
     },
     {
-      src: "/src/assets/B2.png", 
+      src: B2Image, 
       title: "Robotics Labs",
       subtitle: "Innovation Hub",
       gradient: "from-purple-500 to-pink-600"
