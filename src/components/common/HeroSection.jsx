@@ -1,11 +1,40 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { TbRobot } from 'react-icons/tb';
 import { FaBrain, FaMicroscope } from 'react-icons/fa';
 import { HiLightningBolt, HiPhone } from 'react-icons/hi';
 import { HiRocketLaunch } from 'react-icons/hi2';
 
 const HeroSection = () => {
+  // State for auto-changing images
+  const [currentImage, setCurrentImage] = useState(0);
+  
+  // Image data with sources from assets
+  const images = [
+    {
+      src: "/src/assets/B1.png",
+      title: "Computer Labs",
+      subtitle: "Modern Setup",
+      gradient: "from-blue-500 to-indigo-600"
+    },
+    {
+      src: "/src/assets/B2.png", 
+      title: "Robotics Labs",
+      subtitle: "Innovation Hub",
+      gradient: "from-purple-500 to-pink-600"
+    }
+  ];
+
+  // Auto-change images every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,19 +69,10 @@ const HeroSection = () => {
     },
   };
 
-  const rotateVariants = {
-    animate: {
-      rotate: [0, 360],
-      transition: {
-        duration: 12,
-        repeat: Infinity,
-        ease: "linear",
-      },
-    },
-  };
+
 
   return (
-    <section className="min-h-[60vh] sm:min-h-[70vh] lg:min-h-screen flex items-center overflow-hidden relative bg-white">
+    <section className="min-h-[60vh] sm:min-h-[70vh] lg:min-h-screen flex items-center overflow-hidden relative bg-white pt-0">
       {/* Simple Modern Background */}
       <div className="absolute inset-0">
         {/* Clean gradient overlay */}
@@ -78,149 +98,179 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 relative z-10">
+      <div className="container mx-auto px-4 pb-8 sm:pb-12 lg:pb-16 relative z-10">
         <motion.div
           className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Left Content - Modern Tech Visual */}
+          {/* Left Content - Clean Banner with 2 Images */}
           <motion.div
-            className="relative mt-6 lg:mt-0"
+            className="relative mt-4 lg:mt-6"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            {/* Main Robot/Tech Hub */}
+            {/* Smart Infrastructure Badge - Outside the box */}
+            <div className="flex justify-center w-full mb-4">
+              <motion.div
+                className="bg-gradient-primary-secondary text-white px-3 py-2 rounded-full inline-block text-xs sm:text-sm font-semibold shadow-lg w-fit text-center"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 8px 25px rgba(37, 99, 235, 0.4)",
+                  y: -2,
+                }}
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <HiRocketLaunch className="text-xs sm:text-sm" />
+                  <span>Smart Infrastructure Solutions for Future-Ready Schools & Colleges</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Main Banner Card */}
             <motion.div
-              className="relative bg-white/90 backdrop-blur-lg rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200"
-              whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(0,0,0,0.15)",
-                transition: { duration: 0.3 },
-              }}
+              className="bg-white/95 backdrop-blur-lg rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-200"
               variants={floatingVariants}
               animate="animate"
+              whileHover={{
+                y: -5,
+                boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
+                transition: { duration: 0.3 },
+              }}
             >
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl h-40 sm:h-48 lg:h-64 flex items-center justify-center relative overflow-hidden">
-                <motion.div
-                  className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-primary-secondary rounded-2xl flex items-center justify-center shadow-xl"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  variants={rotateVariants}
-                  animate="animate"
-                >
-                  <TbRobot className="text-2xl sm:text-3xl lg:text-4xl text-white" />
-                </motion.div>
-
-                {/* Tech Particles */}
-                <motion.div
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full"
-                  animate={{
-                    opacity: [0, 1, 0],
-                    scale: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 0,
-                  }}
-                />
-                <motion.div
-                  className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary rounded-full"
-                  animate={{
-                    opacity: [0, 1, 0],
-                    scale: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 0.5,
-                  }}
-                />
-              </div>
-
-              <div className="mt-2 sm:mt-3 lg:mt-4 text-center">
-                <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">
+              {/* Header */}
+              <div className="text-center mb-4">                
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 leading-tight">
                   SOLUTION FOR YOUR SCHOOL?
                 </h3>
-                <p className="text-neutral text-xs sm:text-xs md:text-sm leading-relaxed">
+                <p className="text-neutral text-sm md:text-base leading-relaxed">
                   No need to look further - ATLROBO is the One-Stop Solution!
                 </p>
               </div>
-            </motion.div>
 
-            {/* Floating Tech Cards - smaller on mobile */}
-            <motion.div
-              className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-gradient-accent w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center shadow-xl"
-              variants={floatingVariants}
-              animate="animate"
-              whileHover={{ scale: 1.2, rotate: 15 }}
-              style={{ animationDelay: "1s" }}
-            >
-              <FaBrain className="text-lg sm:text-xl lg:text-2xl text-white" />
-            </motion.div>
+              {/* Single Auto-Changing Image Banner */}
+              <div className="relative mb-4">
+                <motion.div
+                  key={currentImage}
+                  className="relative rounded-xl overflow-hidden h-32 sm:h-40 lg:h-48"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${images[currentImage].gradient}`}></div>
+                  <img
+                    src={images[currentImage].src}
+                    alt={images[currentImage].title}
+                    className="w-full h-full object-cover mix-blend-overlay"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <motion.h4 
+                      className="text-white text-sm sm:text-base font-semibold leading-tight mb-1"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.6 }}
+                    >
+                      {images[currentImage].title}
+                    </motion.h4>
+                    <motion.p 
+                      className="text-white/80 text-xs sm:text-sm leading-tight"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.4, duration: 0.6 }}
+                    >
+                      {images[currentImage].subtitle}
+                    </motion.p>
+                  </div>
+                </motion.div>
+                
+                {/* Image Indicators */}
+                <div className="flex justify-center gap-2 mt-3">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImage(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentImage 
+                          ? 'bg-blue-600 w-6' 
+                          : 'bg-gray-300 hover:bg-gray-400'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
 
-            <motion.div
-              className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-gradient-secondary-accent w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-xl"
-              variants={floatingVariants}
-              animate="animate"
-              whileHover={{ scale: 1.3, rotate: -15 }}
-              style={{ animationDelay: "2s" }}
-            >
-              <HiLightningBolt className="text-sm sm:text-base lg:text-xl text-white" />
-            </motion.div>
+              {/* Features Row */}
+              <div className="flex justify-center gap-4 sm:gap-6 mb-4">
+                <motion.div 
+                  className="flex items-center gap-2 text-xs sm:text-sm text-gray-600"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <FaBrain className="text-blue-600 text-sm" />
+                  </div>
+                  <span className="font-medium">Smart Labs</span>
+                </motion.div>
+                
+                <motion.div 
+                  className="flex items-center gap-2 text-xs sm:text-sm text-gray-600"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <HiLightningBolt className="text-yellow-600 text-sm" />
+                  </div>
+                  <span className="font-medium">Fast Wi-Fi</span>
+                </motion.div>
+                
+                <motion.div 
+                  className="flex items-center gap-2 text-xs sm:text-sm text-gray-600"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                    <FaMicroscope className="text-green-600 text-sm" />
+                  </div>
+                  <span className="font-medium">Research</span>
+                </motion.div>
+              </div>
 
-            <motion.div
-              className="absolute top-1/3 -left-4 sm:-left-6 lg:-left-8 bg-gradient-accent-success w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg"
-              variants={floatingVariants}
-              animate="animate"
-              whileHover={{ scale: 1.2 }}
-              style={{ animationDelay: "1.5s" }}
-            >
-              <FaMicroscope className="text-sm sm:text-base lg:text-lg text-white" />
-            </motion.div>
-
-            {/* Floating Particles - fewer on mobile */}
-            {[...Array(4)].map((_, i) => (
+              {/* Statistics Section */}
               <motion.div
-                key={i}
-                className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-primary rounded-full hidden sm:block"
-                style={{
-                  top: `${20 + i * 15}%`,
-                  right: `${10 + i * 5}%`,
-                }}
-                animate={{
-                  y: [-20, 20, -20],
-                  opacity: [0.2, 0.8, 0.2],
-                  scale: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 4 + i * 0.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.3,
-                }}
-              />
-            ))}
+                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-3 sm:p-4 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h4 className="text-center font-bold text-gray-800 text-sm mb-3">Our Impact in Bihar</h4>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                  <div className="text-center">
+                    <div className="text-lg sm:text-xl font-bold text-blue-600">50+</div>
+                    <div className="text-xs text-gray-600">Schools</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg sm:text-xl font-bold text-green-600">100%</div>
+                    <div className="text-xs text-gray-600">Success</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg sm:text-xl font-bold text-purple-600">24/7</div>
+                    <div className="text-xs text-gray-600">Support</div>
+                  </div>
+                </div>
+              </motion.div>
+
+            </motion.div>
           </motion.div>
 
           {/* Right Content */}
           <div className="text-gray-900 space-y-4 sm:space-y-6 lg:space-y-8 text-center">
-            <motion.div
-              className="bg-gradient-primary-secondary text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full inline-block text-xs sm:text-sm font-semibold shadow-lg"
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 8px 25px rgba(37, 99, 235, 0.4)",
-                y: -2,
-              }}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <HiRocketLaunch className="text-sm sm:text-base" />
-                <span>Smart Infrastructure Solutions for Future-Ready Schools & Colleges</span>
-              </div>
-            </motion.div>
+            
 
             <motion.h1
               className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center"

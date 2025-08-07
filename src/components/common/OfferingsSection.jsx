@@ -1,9 +1,11 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { HiRocketLaunch, HiComputerDesktop, HiWifi } from 'react-icons/hi2';
+import { HiRocketLaunch, HiComputerDesktop, HiWifi, HiDocumentArrowDown } from 'react-icons/hi2';
 import { HiFlag } from 'react-icons/hi';
 import { FaHandshake, FaMicroscope } from 'react-icons/fa';
 import { TbRobot } from 'react-icons/tb';
+import { downloadPdf } from '../../utils/pdfDownload';
 // Import specific images for each lab type
 import stemRoboticsImg from "../../assets/images/stem-robotics-lab.jpg";
 import aiIotImg from "../../assets/images/ai-iot-lab.jpg";
@@ -332,16 +334,32 @@ const OfferingsSection = () => {
               <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90">
                 Join hundreds of schools already using ATLROBOLAB solutions
               </p>
-              <motion.button
-                className="bg-gradient-primary-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex items-center gap-2">
-                  <HiRocketLaunch className="text-lg" />
-                  <span>Get Started Today</span>
-                </div>
-              </motion.button>
+              
+              {/* Dual Button Layout */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <motion.button
+                  className="bg-gradient-primary-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex-1"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <HiRocketLaunch className="text-lg" />
+                    <span>Get Started Today</span>
+                  </div>
+                </motion.button>
+                
+                <motion.button
+                  className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:bg-white/30 hover:shadow-xl transition-all duration-300 flex-1"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => downloadPdf('atlrobo-brochure')}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <HiDocumentArrowDown className="text-lg" />
+                    <span>Download Brochure</span>
+                  </div>
+                </motion.button>
+              </div>
             </div>
           </motion.div>
         </motion.div>

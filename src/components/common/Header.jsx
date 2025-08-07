@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/logo.png";
@@ -6,7 +6,43 @@ import logo from "../../assets/logo.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
+  // Handle scroll for header transparency
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call handler right away so state gets updated with initial scroll position
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,8 +58,10 @@ const Header = () => {
   };
 
   const linkClasses = (path) => {
-    const baseClasses = "text-white hover:text-primary-light transition-all duration-200 font-medium text-[15px] relative py-2 px-3";
-    const activeClasses = "text-primary-light font-semibold";
+    const baseClasses = isScrolled 
+      ? "text-black hover:text-orange-600 transition-all duration-200 font-medium text-[15px] relative py-2 px-3"
+      : "text-white hover:text-primary-light transition-all duration-200 font-medium text-[15px] relative py-2 px-3";
+    const activeClasses = isScrolled ? "text-orange-600 font-semibold" : "text-primary-light font-semibold";
     return isActiveLink(path) ? `${baseClasses} ${activeClasses}` : baseClasses;
   };
 
@@ -71,12 +109,18 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-gradient-primary-secondary shadow-2xl sticky top-0 z-50 border-b border-primary/30 backdrop-blur-sm"
+      className={`shadow-2xl sticky top-0 z-50 backdrop-blur-sm transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-gray-100/95' 
+          : 'bg-gradient-primary-secondary'
+      }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       style={{
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(234, 88, 12, 0.1)'
+        boxShadow: isScrolled 
+          ? '0 2px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(234, 88, 12, 0.05)' 
+          : '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(234, 88, 12, 0.1)'
       }}
     >
       <div className="container mx-auto px-4">
@@ -135,7 +179,11 @@ const Header = () => {
                 {/* Dropdown Menu */}
                 {item.hasDropdown && activeDropdown === item.path && (
                   <motion.div
-                    className="absolute top-full left-0 mt-1 w-56 bg-white/95 backdrop-blur-md rounded-lg shadow-2xl border border-white/20 py-2"
+                    className={`absolute top-full left-0 mt-1 w-56 backdrop-blur-md rounded-lg shadow-2xl py-2 ${
+                      isScrolled 
+                        ? 'bg-white/95 border border-gray-200/50' 
+                        : 'bg-white/95 border border-white/20'
+                    }`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
@@ -149,7 +197,7 @@ const Header = () => {
                       >
                         <Link
                           to={dropdownItem.path}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-light hover:text-primary transition-colors duration-200"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 hover:text-orange-600 transition-colors duration-200"
                           onClick={handleLinkClick}
                         >
                           {dropdownItem.label}
@@ -164,13 +212,15 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <motion.button
-            className="lg:hidden relative p-2 w-8 h-8 sm:w-10 sm:h-10 flex flex-col justify-center items-center hover:bg-white/10 rounded-lg transition-colors"
+            className={`lg:hidden relative p-2 w-8 h-8 sm:w-10 sm:h-10 flex flex-col justify-center items-center rounded-lg transition-colors ${
+              isScrolled ? 'hover:bg-black/10' : 'hover:bg-white/10'
+            }`}
             onClick={handleMenuToggle}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.9 }}
           >
             <motion.span
-              className="block h-0.5 w-5 sm:w-6 bg-white rounded-full"
+              className={`block h-0.5 w-5 sm:w-6 rounded-full ${isScrolled ? 'bg-black' : 'bg-white'}`}
               animate={{
                 rotate: isMenuOpen ? 45 : 0,
                 y: isMenuOpen ? 5 : 0,
@@ -178,14 +228,14 @@ const Header = () => {
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block h-0.5 w-5 sm:w-6 bg-white rounded-full mt-1"
+              className={`block h-0.5 w-5 sm:w-6 rounded-full mt-1 ${isScrolled ? 'bg-black' : 'bg-white'}`}
               animate={{
                 opacity: isMenuOpen ? 0 : 1,
               }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block h-0.5 w-5 sm:w-6 bg-white rounded-full mt-1"
+              className={`block h-0.5 w-5 sm:w-6 rounded-full mt-1 ${isScrolled ? 'bg-black' : 'bg-white'}`}
               animate={{
                 rotate: isMenuOpen ? -45 : 0,
                 y: isMenuOpen ? -7 : 0,
@@ -199,10 +249,10 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.nav
-              className="lg:hidden border-t border-white/20 bg-black/20 backdrop-blur-md max-h-[70vh] overflow-y-auto"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden absolute top-full left-0 right-0 border-t border-white/20 bg-gray-800/90 backdrop-blur-md max-h-[70vh] overflow-y-auto z-40 shadow-2xl"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
@@ -221,8 +271,8 @@ const Header = () => {
                   >
                     <Link
                       to={item.path}
-                      className={`block py-2 px-4 text-sm sm:text-base text-white hover:bg-white/10 rounded-lg transition-colors ${
-                        isActiveLink(item.path) ? 'bg-primary/30 text-primary-light' : ''
+                      className={`block py-2 px-4 text-sm sm:text-base text-orange-400 hover:bg-white/10 rounded-lg transition-colors ${
+                        isActiveLink(item.path) ? 'bg-primary/30 text-orange-300' : ''
                       }`}
                       onClick={handleLinkClick}
                     >
@@ -236,7 +286,7 @@ const Header = () => {
                           <Link
                             key={dropdownItem.path}
                             to={dropdownItem.path}
-                            className="block py-1.5 px-3 text-xs sm:text-sm text-primary-light hover:text-white hover:bg-white/10 rounded"
+                            className="block py-1.5 px-3 text-xs sm:text-sm text-white hover:text-orange-300 hover:bg-white/10 rounded"
                             onClick={handleLinkClick}
                           >
                             {dropdownItem.label}

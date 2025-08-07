@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { Button, Card, Badge } from '../components/ui';
 import { 
@@ -6,7 +7,8 @@ import {
   HiWifi, 
   HiPhone, 
   HiRocketLaunch,
-  HiGlobeAlt
+  HiGlobeAlt,
+  HiDocumentArrowDown
 } from 'react-icons/hi2';
 import { 
   FaChalkboardTeacher, 
@@ -17,6 +19,7 @@ import {
 import { TbRobot } from 'react-icons/tb';
 import { HiDesktopComputer } from 'react-icons/hi';
 import { HiCheck } from 'react-icons/hi';
+import { downloadPdf } from '../utils/pdfDownload';
 
 const Products = () => {
   const products = [
@@ -302,6 +305,15 @@ const Products = () => {
                     rightIcon={<HiRocketLaunch />}
                   >
                     Get Started Today
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white transform hover:scale-105 transition-all duration-300"
+                    leftIcon={<HiDocumentArrowDown />}
+                    onClick={() => downloadPdf('atlrobo-brochure')}
+                  >
+                    Download Brochure
                   </Button>
                   <Button 
                     variant="accent" 

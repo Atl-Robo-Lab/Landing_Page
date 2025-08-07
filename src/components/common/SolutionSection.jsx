@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { HiComputerDesktop, HiRocketLaunch } from 'react-icons/hi2';
+import { HiComputerDesktop, HiRocketLaunch, HiDocumentArrowDown } from 'react-icons/hi2';
 import { HiFlag } from 'react-icons/hi';
 import { FaChalkboardTeacher, FaTrophy, FaMicroscope, FaMobile, FaGraduationCap } from 'react-icons/fa';
+import { downloadPdf } from '../../utils/pdfDownload';
 
 const SolutionSection = () => {
   const ref = useRef(null);
@@ -316,20 +317,36 @@ const SolutionSection = () => {
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                 Join the education revolution with ATLROBOLAB's comprehensive solutions
               </p>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  to="/products"
-                  className="inline-block bg-white text-primary px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+              {/* Dual Button Layout */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex-1"
                 >
-                  <div className="flex items-center gap-2">
-                    <HiFlag className="text-lg" />
-                    <span>Explore All Solutions</span>
+                  <Link
+                    to="/products"
+                    className="inline-block bg-white text-primary px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 w-full text-center"
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      <HiFlag className="text-lg" />
+                      <span>Explore All Solutions</span>
+                    </div>
+                  </Link>
+                </motion.div>
+                
+                <motion.button
+                  className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex-1"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => downloadPdf('atlrobo-brochure')}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <HiDocumentArrowDown className="text-lg" />
+                    <span>Download Brochure</span>
                   </div>
-                </Link>
-              </motion.div>
+                </motion.button>
+              </div>
             </div>
           </motion.div>
         </motion.div>
