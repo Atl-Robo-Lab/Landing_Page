@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button, Card } from '../components/ui';
+import { TbRobot } from 'react-icons/tb';
+import { HiPhone, HiEnvelope } from 'react-icons/hi2';
+import { HiHome, HiBookOpen, HiChatAlt, HiInformationCircle } from 'react-icons/hi';
 
 const NotFound = () => {
   const suggestions = [
-    { icon: '🏠', label: 'Home', path: '/', description: 'Go back to our homepage' },
-    { icon: '📚', label: 'Products', path: '/products', description: 'Explore our STEM solutions' },
-    { icon: '💬', label: 'Contact', path: '/contact', description: 'Get in touch with us' },
-    { icon: 'ℹ️', label: 'About', path: '/about', description: 'Learn more about ALTROBOLAB' }
+    { icon: HiHome, label: 'Home', path: '/', description: 'Go back to our homepage' },
+    { icon: HiBookOpen, label: 'Products', path: '/products', description: 'Explore our STEM solutions' },
+    { icon: HiChatAlt, label: 'Contact', path: '/contact', description: 'Get in touch with us' },
+    { icon: HiInformationCircle, label: 'About', path: '/about', description: 'Learn more about ALTROBOLAB' }
   ];
 
   const floatingVariants = {
@@ -81,7 +84,9 @@ const NotFound = () => {
                   variants={floatingVariants}
                   animate="animate"
                 >
-                  <div className="text-6xl md:text-8xl">🤖</div>
+                  <div className="text-6xl md:text-8xl text-blue-600">
+                  <TbRobot />
+                </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -137,7 +142,9 @@ const NotFound = () => {
                   >
                     <Link to={item.path}>
                       <Card className="p-6 h-full text-center hover:shadow-lg transition-all duration-300">
-                        <div className="text-4xl mb-4">{item.icon}</div>
+                        <div className="text-4xl mb-4 text-blue-600">
+                  <item.icon />
+                </div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-2">
                           {item.label}
                         </h3>
@@ -161,10 +168,10 @@ const NotFound = () => {
                   Our support team is here to help you find what you're looking for.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button variant="primary" size="lg" leftIcon="📞">
+                  <Button variant="primary" size="lg" leftIcon={<HiPhone />}>
                     Contact Support
                   </Button>
-                  <Button variant="secondary" size="lg" leftIcon="📧">
+                  <Button variant="secondary" size="lg" leftIcon={<HiEnvelope />}>
                     Send Email
                   </Button>
                 </div>

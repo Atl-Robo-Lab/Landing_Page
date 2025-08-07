@@ -1,44 +1,55 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, Badge } from '../components/ui';
+import { 
+  HiAcademicCap, 
+  HiWifi, 
+  HiRocketLaunch,
+  HiStar
+} from 'react-icons/hi2';
+import { 
+  FaSchool, 
+  FaHandshake, 
+  FaMoneyBillWave 
+} from 'react-icons/fa';
 
 const About = () => {
   const stats = [
-    { number: '7000+', label: 'Schools Worldwide', icon: '🏫' },
-    { number: '20M+', label: 'Students Reached', icon: '👨‍🎓' },
-    { number: '25+', label: 'Countries', icon: '🌍' },
-    { number: '15+', label: 'Years Experience', icon: '⭐' }
+    { number: '500+', label: 'Schools in Bihar', icon: FaSchool },
+    { number: '100K+', label: 'Students Impacted', icon: HiAcademicCap },
+    { number: '₹250-300', label: 'Per Student/Month', icon: FaMoneyBillWave },
+    { number: '24/7', label: 'Support Available', icon: FaHandshake }
   ];
 
   const values = [
     {
-      icon: '💡',
-      title: 'Innovation in Education',
-      description: 'We continuously innovate to bring cutting-edge technology and methodologies to the classroom, ensuring students are prepared for tomorrow\'s challenges.'
+      icon: FaSchool,
+      title: 'Infrastructure Excellence',
+      description: 'We design and build state-of-the-art labs with high-performance computers, smart boards, robotics kits, and all necessary peripherals to create dynamic and productive learning spaces tailored to your institution\'s specific needs.'
     },
     {
-      icon: '🤝',
-      title: 'Hands-on Learning',
-      description: 'Our approach emphasizes experiential learning through practical projects, enabling students to learn by doing and building real-world skills.'
+      icon: HiWifi,
+      title: 'Complete Connectivity',
+      description: 'We deploy robust, high-speed networking infrastructure providing powerful and stable Wi-Fi coverage across every corner of your campus—from classrooms and libraries to administrative offices and common areas.'
     },
     {
-      icon: '🎯',
-      title: 'Future-Ready Skills',
-      description: 'We focus on developing critical thinking, problem-solving, and technical skills that prepare students for careers in the digital age.'
+      icon: FaHandshake,
+      title: 'Unwavering Support',
+      description: 'Our commitment extends far beyond installation. We provide comprehensive teacher training, ongoing maintenance, and technical support to guarantee that your systems run smoothly, minimizing downtime and maximizing learning time.'
     },
     {
-      icon: '🌟',
-      title: 'Excellence & Quality',
-      description: 'Our commitment to excellence drives us to maintain the highest standards in curriculum design, teacher training, and student outcomes.'
+      icon: HiStar,
+      title: 'Bihar-Focused Excellence',
+      description: 'We are proud to be serving schools and colleges across Bihar, building a reputation for excellence, reliability, and a deep commitment to transforming education in the state.'
     }
   ];
 
   const timeline = [
-    { year: '2008', event: 'Company Founded', description: 'Started with a vision to revolutionize STEM education' },
-    { year: '2012', event: 'First 1000 Schools', description: 'Reached our first milestone of 1000 partner schools' },
-    { year: '2016', event: 'International Expansion', description: 'Expanded operations to over 15 countries worldwide' },
-    { year: '2020', event: 'Digital Transformation', description: 'Launched comprehensive digital learning platforms' },
-    { year: '2024', event: 'AI Integration', description: 'Integrated AI and advanced technologies in curriculum' }
+    { year: '2020', event: 'ATL ROBO Founded', description: 'Started with a vision to bridge the infrastructure gap in Bihar education' },
+    { year: '2021', event: 'First 50 Schools', description: 'Successfully deployed complete infrastructure solutions in our first partner schools' },
+    { year: '2022', event: 'Bihar Expansion', description: 'Expanded operations across multiple districts in Bihar' },
+    { year: '2023', event: 'Advanced Infrastructure', description: 'Launched comprehensive Wi-Fi and lab solutions for larger institutions' },
+    { year: '2024', event: 'Smart Education Hub', description: 'Established ATL ROBO as Bihar\'s leading educational infrastructure provider' }
   ];
 
   const containerVariants = {
@@ -75,15 +86,15 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <Badge variant="gradient" size="lg" className="mb-4">
-              About ALTROBOLAB
+              About ATL ROBO
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Transforming Education Through <span className="text-gradient-primary-secondary">Innovation</span>
+              Building the Future of Education in <span className="text-gradient-primary-secondary">Bihar</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              For over 15 years, ALTROBOLAB has been at the forefront of educational innovation, 
-              empowering millions of students worldwide with cutting-edge STEM education solutions 
-              that prepare them for the challenges and opportunities of tomorrow.
+              ATL ROBO is a pioneering force dedicated to transforming schools and colleges across Bihar into modern hubs of innovation and learning. 
+              Our name is synonymous with "Smart Infrastructure Solutions for Future‑Ready Schools & Colleges." We are not just vendors; 
+              we are architects of educational excellence, committed to empowering the next generation with the tools they need to succeed in a digital world.
             </p>
           </motion.div>
 
@@ -102,7 +113,9 @@ const About = () => {
                 transition={{ duration: 0.2 }}
               >
                 <Card className="p-6 text-center">
-                  <div className="text-3xl mb-3">{stat.icon}</div>
+                  <div className="text-3xl mb-3 text-blue-600">
+                  <stat.icon />
+                </div>
                   <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
                 </Card>
@@ -123,8 +136,10 @@ const About = () => {
                 <div className="max-w-4xl mx-auto text-center">
                   <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
                   <p className="text-xl md:text-2xl leading-relaxed text-white/90">
-                    To drive the future of Science, Technology, Engineering and Mathematics (STEM) 
-                    Education through our experiential programs into Robotics, Programming, Science, and Electronics.
+                    To bridge the critical infrastructure gap in education across Bihar by designing, deploying, and managing 
+                    state-of-the-art computer labs, ensuring seamless and reliable Wi-Fi connectivity across entire campuses, 
+                    and providing the innovative learning tools that make education engaging, effective, and inspiring. 
+                    We believe that every student in Bihar deserves access to a world-class learning environment.
                   </p>
                 </div>
               </div>
@@ -143,11 +158,13 @@ const About = () => {
               <Card variant="gradient" className="p-8 h-full">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  To become the leading EdTech company globally, empowering millions of students 
-                  with innovative STEM education solutions that prepare them for the challenges 
-                  of tomorrow.
+                  To transform every school and college in Bihar into a modern hub of innovation and learning, 
+                  ensuring that students across the state have access to world-class educational infrastructure 
+                  that prepares them for success in the digital age.
                 </p>
-                <div className="text-4xl">🚀</div>
+                <div className="text-4xl text-blue-600">
+                  <HiRocketLaunch />
+                </div>
               </Card>
             </motion.div>
 
@@ -162,20 +179,28 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Impact</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <span className="text-success mr-3">✓</span>
-                    <span className="text-gray-700">Innovative Learning Solutions</span>
+                    <span className="text-success mr-3">
+                      <HiRocketLaunch className="text-lg" />
+                    </span>
+                    <span className="text-gray-700">Future-Ready Campus Infrastructure</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-success mr-3">✓</span>
-                    <span className="text-gray-700">Global Educational Transformation</span>
+                    <span className="text-success mr-3">
+                      <HiWifi className="text-lg" />
+                    </span>
+                    <span className="text-gray-700">Seamless Campus-Wide Connectivity</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-success mr-3">✓</span>
-                    <span className="text-gray-700">Future-Ready Skill Development</span>
+                    <span className="text-success mr-3">
+                      <FaSchool className="text-lg" />
+                    </span>
+                    <span className="text-gray-700">Enhanced Learning Experience</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-success mr-3">✓</span>
-                    <span className="text-gray-700">Comprehensive Teacher Training</span>
+                    <span className="text-success mr-3">
+                      <FaHandshake className="text-lg" />
+                    </span>
+                    <span className="text-gray-700">Complete Support & Training</span>
                   </div>
                 </div>
               </Card>
@@ -196,7 +221,7 @@ const About = () => {
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 These principles guide everything we do and help us deliver exceptional 
-                educational experiences to students and educators worldwide.
+                educational infrastructure solutions to schools and colleges across Bihar.
               </p>
             </div>
 
@@ -216,7 +241,9 @@ const About = () => {
                 >
                   <Card className="p-8 h-full">
                     <div className="flex items-start space-x-4">
-                      <div className="text-4xl">{value.icon}</div>
+                      <div className="text-4xl text-blue-600">
+                  <value.icon />
+                </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                         <p className="text-gray-600 leading-relaxed">{value.description}</p>

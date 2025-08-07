@@ -1,95 +1,111 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button, Card, Badge } from '../components/ui';
+import { 
+  HiComputerDesktop, 
+  HiWifi, 
+  HiPhone, 
+  HiRocketLaunch,
+  HiGlobeAlt
+} from 'react-icons/hi2';
+import { 
+  FaChalkboardTeacher, 
+  FaSchool,
+  FaHandshake,
+  FaMoneyBillWave
+} from 'react-icons/fa';
+import { TbRobot } from 'react-icons/tb';
+import { HiDesktopComputer } from 'react-icons/hi';
+import { HiCheck } from 'react-icons/hi';
 
 const Products = () => {
   const products = [
     {
-      title: 'STEM & Robotics Lab',
-      description: 'Complete robotics learning solution with hands-on kits and curriculum covering basic to advanced robotics concepts.',
-      icon: '🤖',
+      title: 'Complete Computer Lab Setup',
+      description: 'State-of-the-art computer labs with high-performance computers, smart boards, and all necessary peripherals tailored to your institution\'s specific needs.',
+      icon: HiComputerDesktop,
       color: 'bg-gradient-primary-secondary',
-      features: ['Arduino & Raspberry Pi', 'Sensor Integration', 'AI Programming', '3D Design'],
-      price: 'Starting from ₹2,50,000',
+      features: ['High-Performance Desktop Computers', 'Interactive Smart Boards', 'Modern Software Suite', 'Complete Installation & Setup'],
+      price: '₹250-300 per student/month',
       badge: 'Most Popular'
     },
     {
-      title: 'AI & IoT Lab',
-      description: 'Artificial Intelligence and Internet of Things learning modules with real-world project implementations.',
-      icon: '🧠',
+      title: 'Campus-Wide Wi-Fi Infrastructure',
+      description: 'Robust, high-speed networking infrastructure providing stable Wi-Fi coverage across every corner of your campus.',
+      icon: HiWifi,
       color: 'bg-gradient-secondary-accent',
-      features: ['Machine Learning', 'IoT Devices', 'Data Analytics', 'Cloud Integration'],
-      price: 'Starting from ₹3,00,000',
-      badge: 'Advanced'
+      features: ['Enterprise-Grade Routers', 'High-Density Access Points', 'Network Switches', 'Complete Campus Coverage'],
+      price: 'Included in package',
+      badge: 'Essential'
     },
     {
-      title: 'Atal Tinkering Lab',
-      description: 'Government initiative focused on innovation and creativity with comprehensive STEM equipment.',
-      icon: '🔧',
+      title: 'Robotics & STEM Kits',
+      description: 'Advanced robotics kits including Arduino and Raspberry Pi platforms giving students hands-on experience with coding and engineering.',
+      icon: TbRobot,
       color: 'bg-gradient-success-primary',
-      features: ['3D Printers', 'Electronics Kit', 'Fabrication Tools', 'Innovation Projects'],
-      price: 'Starting from ₹20,00,000',
-      badge: 'Government Approved'
+      features: ['Arduino Development Kits', 'Raspberry Pi Systems', 'Sensor Integration', 'Programming Tools'],
+      price: 'Included in lab setup',
+      badge: 'Innovation Ready'
     },
     {
-      title: 'Programming Lab',
-      description: 'Learn programming concepts through interactive coding exercises and project-based learning.',
-      icon: '💻',
+      title: 'Teacher Training & Support',
+      description: 'Comprehensive teacher training programs to ensure your faculty can confidently use the new technology with ongoing support.',
+      icon: FaChalkboardTeacher,
       color: 'bg-gradient-accent-primary',
-      features: ['Python & JavaScript', 'Web Development', 'Mobile Apps', 'Game Development'],
-      price: 'Starting from ₹1,50,000',
-      badge: 'Beginner Friendly'
+      features: ['Faculty Training Programs', '24/7 Technical Support', 'Regular Maintenance', 'System Monitoring'],
+      price: 'Included in package',
+      badge: 'Support Included'
     },
     {
-      title: 'Science Lab',
-      description: 'Virtual and physical science experiments for better understanding of scientific concepts.',
-      icon: '🔬',
+      title: 'Network Servers & Management',
+      description: 'Powerful servers for managing your network infrastructure and ensuring seamless operation of all connected devices.',
+      icon: HiDesktopComputer,
       color: 'bg-gradient-primary-success',
-      features: ['Virtual Labs', 'Physics Experiments', 'Chemistry Simulations', 'Biology Models'],
-      price: 'Starting from ₹1,80,000',
-      badge: 'Interactive'
+      features: ['Network Management Servers', 'Data Storage Solutions', 'Security Systems', 'Remote Monitoring'],
+      price: 'Custom pricing',
+      badge: 'Enterprise Grade'
     },
     {
-      title: 'Mathematics Lab',
-      description: 'Interactive mathematical concepts and problem-solving tools with visual learning aids.',
-      icon: '📐',
+      title: 'Complete Turnkey Solution',
+      description: 'All-inclusive package covering equipment, setup, support, and training - everything you need for a modern educational environment.',
+      icon: FaSchool,
       color: 'bg-gradient-secondary-success',
-      features: ['Geometry Tools', 'Algebra Software', 'Statistics Analysis', 'Mathematical Models'],
-      price: 'Starting from ₹1,20,000',
-      badge: 'Visual Learning'
+      features: ['Complete Setup', 'Equipment Included', 'Training & Support', 'No Hidden Costs'],
+      price: '₹250-300 per student/month',
+      badge: 'All-Inclusive'
     }
   ];
 
   const benefits = [
     {
-      icon: '🏆',
-      title: 'Award-Winning Curriculum',
-      description: 'Internationally recognized and award-winning STEM curriculum designed by experts.'
+      icon: HiRocketLaunch,
+      title: 'Become Future-Ready',
+      description: 'Our modern labs and technology inspire a culture of innovation and prepare students for high-demand careers in technology, engineering, and science.'
     },
     {
-      icon: '👨‍🏫',
-      title: 'Teacher Training',
-      description: 'Comprehensive teacher training programs to ensure effective implementation.'
+      icon: HiWifi,
+      title: 'Seamless Connectivity',
+      description: 'Eliminate the frustration of slow, unreliable internet. Our fast and stable Wi-Fi empowers students and faculty to learn, research, and collaborate without limits.'
     },
     {
-      icon: '🔧',
-      title: 'Complete Setup',
-      description: 'End-to-end setup support including installation, training, and maintenance.'
+      icon: FaSchool,
+      title: 'Enhanced Learning Experience',
+      description: 'Interactive tools and a dynamic digital environment improve teaching quality, boost student engagement, and make learning more effective and enjoyable.'
     },
     {
-      icon: '📱',
-      title: 'Digital Platform',
-      description: 'Advanced learning management system with progress tracking and analytics.'
+      icon: FaHandshake,
+      title: 'Complete Support Partnership',
+      description: 'We handle everything—from initial planning and installation to ongoing maintenance and professional training. We are your dedicated technology partner every step of the way.'
     },
     {
-      icon: '🌍',
-      title: 'Global Presence',
-      description: 'Trusted by 7000+ schools worldwide with over 20 million learners.'
+      icon: HiGlobeAlt,
+      title: 'Trusted Network Across Bihar',
+      description: 'We are proud to be serving schools and colleges across the state, building a reputation for excellence, reliability, and a deep commitment to education.'
     },
     {
-      icon: '🤝',
-      title: '24/7 Support',
-      description: 'Round-the-clock technical support and customer service assistance.'
+      icon: FaMoneyBillWave,
+      title: 'Transparent Pricing',
+      description: 'Simple, scalable pricing: ₹250/student/month for institutions over 1000 students, ₹300/student/month for smaller institutions. No hidden fees.'
     }
   ];
 
@@ -173,7 +189,9 @@ const Products = () => {
                         {product.badge}
                       </Badge>
                     </div>
-                    <div className="text-4xl mb-3">{product.icon}</div>
+                    <div className="text-4xl mb-3 text-white">
+                      <product.icon />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">{product.title}</h3>
                     <p className="text-white/90 text-sm leading-relaxed">
                       {product.description}
@@ -246,7 +264,9 @@ const Products = () => {
                   transition={{ duration: 0.2 }}
                 >
                   <Card className="p-6 h-full text-center">
-                    <div className="text-4xl mb-4">{benefit.icon}</div>
+                    <div className="text-4xl mb-4 text-blue-600">
+                      <benefit.icon />
+                    </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                   </Card>
@@ -279,7 +299,7 @@ const Products = () => {
                     variant="gradient" 
                     size="lg"
                     className="flex-1 bg-gradient-primary-secondary shadow-lg hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
-                    rightIcon="🚀"
+                    rightIcon={<HiRocketLaunch />}
                   >
                     Get Started Today
                   </Button>
@@ -287,7 +307,7 @@ const Products = () => {
                     variant="accent" 
                     size="lg"
                     className="flex-1 bg-gradient-success-primary shadow-lg hover:shadow-success/25 transform hover:scale-105 transition-all duration-300"
-                    leftIcon="📞"
+                    leftIcon={<HiPhone />}
                   >
                     Schedule Demo
                   </Button>
@@ -295,15 +315,15 @@ const Products = () => {
                 
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
                   <div className="flex items-center">
-                    <span className="text-success mr-2">✓</span>
+                    <HiCheck className="text-success mr-2" />
                     Free Consultation
                   </div>
                   <div className="flex items-center">
-                    <span className="text-success mr-2">✓</span>
+                    <HiCheck className="text-success mr-2" />
                     Custom Solutions
                   </div>
                   <div className="flex items-center">
-                    <span className="text-success mr-2">✓</span>
+                    <HiCheck className="text-success mr-2" />
                     24/7 Support
                   </div>
                 </div>

@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button, Card, Input, Badge } from '../components/ui';
+import { 
+  HiComputerDesktop, 
+  HiWifi, 
+  HiPhone, 
+  HiEnvelope, 
+  HiMapPin, 
+  HiClock,
+  HiGlobeAlt,
+  HiRocketLaunch
+} from 'react-icons/hi2';
+import { TbRobot } from 'react-icons/tb';
+import { 
+  FaChalkboardTeacher, 
+  FaSchool,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin
+} from 'react-icons/fa';
+import { HiDesktopComputer } from 'react-icons/hi';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,38 +35,38 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
 
   const labTypes = [
-    { id: 'stem', name: 'STEM & Robotics Lab', icon: '🤖' },
-    { id: 'ai', name: 'AI & IoT Lab', icon: '🧠' },
-    { id: 'tinkering', name: 'Atal Tinkering Lab', icon: '🔧' },
-    { id: 'programming', name: 'Programming Lab', icon: '💻' },
-    { id: 'science', name: 'Science Lab', icon: '🔬' },
-    { id: 'math', name: 'Mathematics Lab', icon: '📐' }
+    { id: 'computer', name: 'Complete Computer Lab Setup', icon: HiComputerDesktop },
+    { id: 'wifi', name: 'Campus-Wide Wi-Fi Infrastructure', icon: HiWifi },
+    { id: 'robotics', name: 'Robotics & STEM Kits', icon: TbRobot },
+    { id: 'training', name: 'Teacher Training & Support', icon: FaChalkboardTeacher },
+    { id: 'servers', name: 'Network Servers & Management', icon: HiDesktopComputer },
+    { id: 'turnkey', name: 'Complete Turnkey Solution', icon: FaSchool }
   ];
 
   const contactInfo = [
     {
-      icon: '📧',
+      icon: HiEnvelope,
       title: 'Email',
-      details: 'info@altrobolab.com',
+      details: 'info@atlrobo.com',
       subtitle: 'Send us an email anytime!'
     },
     {
-      icon: '📞',
+      icon: HiPhone,
       title: 'Phone',
-      details: '+91-XXX-XXX-XXXX',
-      subtitle: 'Mon-Fri from 9am to 6pm'
+      details: '+91 87092 52136',
+      subtitle: 'Call us anytime for consultation'
     },
     {
-      icon: '📍',
-      title: 'Address',
-      details: 'Technology Park, Sector 21',
-      subtitle: 'Gurugram, Haryana - 122016'
+      icon: HiMapPin,
+      title: 'Service Area',
+      details: 'All Districts in Bihar',
+      subtitle: 'Serving schools & colleges across Bihar'
     },
     {
-      icon: '🕒',
-      title: 'Working Hours',
-      details: 'Mon - Fri: 9:00 AM - 6:00 PM',
-      subtitle: 'Saturday: 10:00 AM - 4:00 PM'
+      icon: HiClock,
+      title: 'Availability',
+      details: '24/7 Support Available',
+      subtitle: 'Ready to transform your campus!'
     }
   ];
 
@@ -163,11 +183,11 @@ const Contact = () => {
               Get In Touch
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Let's Transform Your <span className="text-gradient-primary-secondary">School Together</span>
+              Transform Your <span className="text-gradient-primary-secondary">Campus in Bihar</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to bring cutting-edge STEM education to your institution? 
-              We'd love to hear from you and discuss how we can help.
+              Ready to provide your students with the educational environment they deserve? 
+              Contact us today to schedule a free consultation and discuss how ATL ROBO can transform your campus into a beacon of modern education.
             </p>
           </motion.div>
 
@@ -190,7 +210,9 @@ const Contact = () => {
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="text-2xl">{item.icon}</div>
+                      <div className="text-2xl text-blue-600">
+                        <item.icon />
+                      </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">{item.title}</h3>
                         <p className="text-gray-700">{item.details}</p>
@@ -204,14 +226,14 @@ const Contact = () => {
                 <div className="mt-8 pt-8 border-t border-gray-200">
                   <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
                   <div className="flex space-x-4">
-                    {['🌐', '📘', '📷', '🐦', '💼'].map((icon, index) => (
+                    {[HiGlobeAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin].map((IconComponent, index) => (
                       <motion.div
                         key={index}
                         className="w-10 h-10 bg-gradient-primary-secondary rounded-full flex items-center justify-center text-white cursor-pointer"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        {icon}
+                        <IconComponent className="text-sm" />
                       </motion.div>
                     ))}
                   </div>
@@ -244,7 +266,9 @@ const Contact = () => {
                           onClick={() => setFormData(prev => ({ ...prev, labType: lab.id }))}
                         >
                           <div className="text-center">
-                            <div className="text-2xl mb-1">{lab.icon}</div>
+                            <div className="text-2xl mb-1 text-blue-600">
+                              <lab.icon />
+                            </div>
                             <div className="text-xs font-medium text-gray-700">{lab.name}</div>
                           </div>
                         </motion.div>
@@ -272,7 +296,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       error={errors.email}
                       required
-                      leftIcon="📧"
+                      leftIcon={<HiEnvelope />}
                     />
                   </div>
 
@@ -285,7 +309,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       error={errors.phone}
                       required
-                      leftIcon="📞"
+                      leftIcon={<HiPhone />}
                     />
                     
                     <Input
@@ -334,7 +358,7 @@ const Contact = () => {
                       size="lg"
                       loading={isSubmitting}
                       className="flex-1"
-                      rightIcon="🚀"
+                      rightIcon={<HiRocketLaunch />}
                     >
                       {isSubmitting ? 'Sending Message...' : 'Send Message'}
                     </Button>
@@ -343,7 +367,7 @@ const Contact = () => {
                       type="button"
                       variant="secondary"
                       size="lg"
-                      leftIcon="📞"
+                      leftIcon={<HiPhone />}
                     >
                       Schedule Call
                     </Button>
